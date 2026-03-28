@@ -1,19 +1,28 @@
 # task-079 — Dashboard: Isometric Pixel Art Office (Canvas + Sprite Sheets)
 
 ## Objective
-Build a new dashboard page at /office-iso with an isometric pixel art office. Each agent (APEX, JACK, sub-agents) gets a unique sprite character. Active agents show typing animation at desks with code on monitors. Idle agents sit still. Spawned sub-agents walk in through door. Finished tasks trigger stand-up animation. Real-time data from OpenClaw sessions/cron. Tech: HTML5 Canvas + sprite sheets on Next.js page.
+Add a visually compelling isometric office page to the CrispWave Dashboard that represents agents and system activity in a fun but still readable operational format.
 
 ## Scope
-- Legacy task; scope needs cleanup if this task is reactivated
+- Build the office-iso page
+- Render unique agent characters and office props
+- Reflect live or near-live agent activity states visually
+- Keep the page accessible from dashboard navigation
 
 ## Acceptance Criteria
-- [ ] Spec needs explicit completion criteria
+- [ ] office-iso page loads successfully
+- [ ] Agents and office props render correctly
+- [ ] The page reflects activity/state in a meaningful way
+- [ ] Navigation to/from the page works
+- [ ] The page is stable enough to be considered shipped, or remaining gaps are explicit
 
 ## Constraints / Requirements
-- Preserve historical task context
+- Keep visual polish subordinate to usability
+- Prefer lightweight implementation over over-engineered assets
+- Maintain compatibility with the existing dashboard stack
 
 ## Context / Handoff
-Legacy task with thin historical notes.
+A prior pass reportedly delivered this page, but the task state drifted. This spec exists so the task can now be judged on actual deliverable quality rather than loose memory. If the page is already good, the task can be normalized cleanly; if not, remaining work should be explicit.
 
 ## Verification
-Verification not yet standardized.
+Load the page, confirm rendering and navigation, and verify the visual activity model is functioning as intended.

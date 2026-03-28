@@ -1,19 +1,26 @@
 # task-033 — GitHub integration — manage PRs, issues, CI from APEX
 
 ## Objective
-Legacy task migrated without a full objective yet.
+Enable CrispWave operators to manage GitHub issues, pull requests, and CI status directly through the local GitHub CLI workflow.
 
 ## Scope
-- Legacy task; scope needs cleanup if this task is reactivated
+- Use gh CLI for issue/PR/CI operations
+- Verify auth is configured on the machine
+- Unblock real GitHub actions from the agent environment
+- Keep the blocker visible if Ronald action is still required
 
 ## Acceptance Criteria
-- [ ] Spec needs explicit completion criteria
+- [ ] gh auth state is verified
+- [ ] At least one real GitHub read action is possible when unblocked
+- [ ] The blocker is explicit if auth is still missing
+- [ ] Future operator knows exactly what Ronald must do
 
 ## Constraints / Requirements
-- Preserve historical task context
+- Do not fake GitHub readiness without auth
+- Keep the blocker state honest and actionable
 
 ## Context / Handoff
-gh CLI installed but needs GitHub auth (gh auth login) — requires browser/interactive flow. Ronald needs to run: gh auth login on the Mac Mini.
+This task is blocked because gh CLI auth requires Ronald to complete an interactive login flow. The important thing is not implementation complexity but making the blocker unmistakable and future follow-up trivial.
 
 ## Verification
-APEX can list/create/comment on issues; review and merge PRs; check CI status; tested on a real repo
+Run gh auth status or equivalent and confirm whether authenticated GitHub operations are available.

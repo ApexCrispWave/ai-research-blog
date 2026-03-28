@@ -1,19 +1,26 @@
 # task-065 — Product: MEP AutoCAD Block Library — complete build and list for sale
 
 ## Objective
-Legacy task migrated without a full objective yet.
+Carry the finished MEP AutoCAD Block Library through review and listing so it becomes a real sellable product rather than just a completed asset package.
 
 ## Scope
-- Legacy task; scope needs cleanup if this task is reactivated
+- Preserve finished asset package context
+- Track Ronald review needs
+- Track listing blocker and marketplace path
+- Keep ship-readiness honest
 
 ## Acceptance Criteria
-- [ ] Spec needs explicit completion criteria
+- [ ] Asset package exists and is identifiable
+- [ ] Any Ronald review requirement is explicit
+- [ ] Listing blocker is explicit
+- [ ] Future operator knows what remains before sale readiness
 
 ## Constraints / Requirements
-- Preserve historical task context
+- Maintain distinction between built files and listed product
+- Do not overstate ship status
 
 ## Context / Handoff
-In development (task-037 marked done but listing blocked). Discord: #mep-autocad-block-library. Files in /Users/openclaw/reports/. BLOCKER: Gumroad credentials needed for listing. Ronald review of block quality needed before shipping. | Status changed to blocked — waiting on Gumroad credentials from Ronald.
+The block library build work was largely completed already. Remaining work is commercialization/review. This spec exists to make the gap explicit.
 
 ## Verification
-MEP block library ZIP complete with preview PDF, listed on Gumroad or Autodesk App Store, purchasable
+Confirm the packaged files exist and identify whether review/listing blockers remain.

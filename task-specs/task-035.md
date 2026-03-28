@@ -1,19 +1,25 @@
 # task-035 — Calendar integration — read and create calendar events
 
 ## Objective
-Legacy task migrated without a full objective yet.
+Enable calendar read/create operations for Ronald’s workflow once local permissions or tooling are available.
 
 ## Scope
-- Legacy task; scope needs cleanup if this task is reactivated
+- Determine viable calendar access path on this machine
+- Use native automation or a CLI bridge
+- Keep blocker explicit if permissions/tooling are missing
 
 ## Acceptance Criteria
-- [ ] Spec needs explicit completion criteria
+- [ ] Read path for upcoming events is identified or implemented
+- [ ] Create-event path is identified or implemented
+- [ ] If blocked, the exact missing permission/tooling is stated clearly
+- [ ] Future operator can resume without re-researching the blocker
 
 ## Constraints / Requirements
-- Preserve historical task context
+- Respect macOS permission boundaries
+- Do not claim integration is live without successful reads
 
 ## Context / Handoff
-icalBuddy not available via brew. osascript Calendar access hangs (needs Automation permission grant). Need either: (1) Ronald to grant Calendar automation permission in System Settings, or (2) install a calendar CLI. Blocked until permissions sorted.
+The current blocker is around Calendar access permissions/tooling. This task should remain blocked until that prerequisite is resolved, but the spec should make the next step obvious.
 
 ## Verification
-APEX can read upcoming calendar events; surface them in morning briefing; create events when asked
+Attempt calendar access with the chosen method and confirm success or the exact blocking failure.

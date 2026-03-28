@@ -1,19 +1,24 @@
 # task-044 — Register domain via browser automation (Porkbun)
 
 ## Objective
-Legacy task migrated without a full objective yet.
+Complete the domain registration workflow through Porkbun once Ronald authorizes/provides the payment step.
 
 ## Scope
-- Legacy task; scope needs cleanup if this task is reactivated
+- Preserve the researched domain and pricing context
+- Keep the workflow resumable from the point of payment
+- Make the human-required blocker explicit
 
 ## Acceptance Criteria
-- [ ] Spec needs explicit completion criteria
+- [ ] Chosen domain and registrar context are preserved
+- [ ] Purchase blocker is clearly identified as Ronald/payment controlled
+- [ ] Future resumption does not require redoing the full setup research
 
 ## Constraints / Requirements
-- Preserve historical task context
+- Do not attempt payment without Ronald
+- Treat checkout/payment as human approval territory
 
 ## Context / Handoff
-Porkbun checkout confirmed: crispwavetest.com at $11.08/yr. Stopped before credit card entry. Waiting for Ronald to provide payment info or confirm purchase.
+Research and checkout prep were already done, but the final purchase step requires Ronald’s intervention. This spec exists so the task stays actionable rather than vaguely blocked.
 
 ## Verification
-whois crispwavetest.com | grep -i registrar
+Confirm the intended domain and checkout state are documented and that the task notes still match reality.

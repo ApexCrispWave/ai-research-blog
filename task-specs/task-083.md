@@ -1,19 +1,30 @@
 # task-083 — Dashboard: Emergency Model Control Page (Standalone)
 
 ## Objective
-Standalone HTML page at public/emergency.html. Full model switching for ALL providers (Anthropic, OpenAI, Gemini, Local/Ollama). Comprehensive agent control panel showing all 11 agents with model dropdowns. Fallback chain editor with drag-reorder. Backend API endpoints in server.js to read/write openclaw.json and restart gateway. Works independently of dashboard — bookmarkable on phone. Dark theme, mobile-responsive.
+Provide a standalone emergency model control surface that remains available even if the main dashboard fails, letting Ronald inspect and change model assignments during outages or incidents.
 
 ## Scope
-- Legacy task; scope needs cleanup if this task is reactivated
+- Standalone service independent of dashboard runtime
+- Full model switching for relevant agents
+- Fallback chain visibility/editing
+- Backend control path for reading/writing model config and restarting gateway
+- Mobile-usable dark UI suitable for Ronald’s phone
 
 ## Acceptance Criteria
-- [ ] Spec needs explicit completion criteria
+- [ ] Standalone service runs independently of the dashboard
+- [ ] Ronald can load the page from the intended network path
+- [ ] Current model and fallback state are visible clearly
+- [ ] Control actions work through the expected config/restart flow
+- [ ] The emergency surface remains available even if dashboard app is down
 
 ## Constraints / Requirements
-- Preserve historical task context
+- Independence from dashboard is mandatory
+- UX should be operational and trustworthy under stress
+- Mobile responsiveness matters
+- This is emergency infrastructure, not decorative UI
 
 ## Context / Handoff
-Legacy task with thin historical notes.
+This task was revised from an in-dashboard page into a standalone project because the whole point is emergency access when other systems are broken. The separate project and launch path are now part of the required design, not an implementation detail.
 
 ## Verification
-Verification not yet standardized.
+Confirm the standalone service boots, loads, exposes the intended model-control functionality, and remains separate from the dashboard runtime.

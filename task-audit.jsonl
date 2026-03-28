@@ -17,3 +17,5 @@
 {"ts":"2026-03-28T15:21:28Z","action":"status_change","taskId":"task-088","actor":"apex","details":"pending→in-progress reason="}
 {"ts":"2026-03-28T15:21:56Z","action":"status_change","taskId":"task-088","actor":"apex","details":"in-progress→pending reason=Smoke test complete, returning to queue"}
 {"ts":"2026-03-28T15:21:56Z","action":"status_change","taskId":"task-088","actor":"apex","details":"pending→cancelled reason=Smoke test complete"}
+{"ts":"2026-03-28T16:36:23Z","action":"status_change","taskId":"task-087","actor":"apex","details":"pending→in-progress reason="}
+{"ts":"2026-03-28T16:36:23Z","action":"status_change","taskId":"task-087","actor":"apex","details":"in-progress→done reason="}

@@ -1,19 +1,28 @@
 # task-072 — Build BookForge AI to Production-Ready
 
 ## Objective
-Legacy task migrated without a full objective yet.
+Bring BookForge AI to a truly production-ready state so Ronald can test it end-to-end with confidence across its supported book workflows.
 
 ## Scope
-- Legacy task; scope needs cleanup if this task is reactivated
+- Stabilize the app and remove critical runtime failures
+- Ensure supported book types generate correctly
+- Verify end-to-end usability, not just individual fixes
+- Track remaining blockers between internal stabilization and Ronald-ready testing
 
 ## Acceptance Criteria
-- [ ] Spec needs explicit completion criteria
+- [ ] Critical build/runtime failures are resolved
+- [ ] Core book-generation paths work reliably
+- [ ] Ronald can test the app without hitting obvious broken flows
+- [ ] Remaining gaps are explicitly documented if anything is still not production-ready
+- [ ] Task state matches real readiness, not partial progress
 
 ## Constraints / Requirements
-- Preserve historical task context
+- Production-ready means usable by Ronald, not merely compiling
+- Verify actual routes/workflows where possible
+- Preserve fixes already completed in related BookForge tasks
 
 ## Context / Handoff
-Full autonomous build: 6 templates (Children, Coloring, Journal, Activity, Logbook, Puzzles) with template-specific generation, KDP-compliant PDFs, robust workflows. Ronald wants feature-complete before testing. APEX owns this 100%.
+BookForge has already received multiple repair/stabilization passes, including route/API fixes and feedback-driven UX changes. This parent task stays open until the app is genuinely ready for Ronald’s end-to-end use and confidence testing.
 
 ## Verification
-All 6 book types generate KDP-ready PDFs; Ronald can test end-to-end
+Run the app, verify build/startup and key routes/APIs, and confirm whether all defined book-generation flows are usable for Ronald testing.

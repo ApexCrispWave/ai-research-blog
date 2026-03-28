@@ -1,19 +1,29 @@
 # task-085 — Dashboard: Quick-Switch Model Bar on Homepage
 
 ## Objective
-Add a model quick-switch bar to the main dashboard index.html. Three prominent buttons: HAIKU | SONNET | OPUS for instant APEX model switching. Expandable section below with per-agent quick toggles. Visual indicator of current active model. Calls same API endpoints as task-083.
+Add a fast model switching strip to the main dashboard so Ronald can make common model changes instantly without drilling into the full control panel.
 
 ## Scope
-- Legacy task; scope needs cleanup if this task is reactivated
+- Add a prominent quick-switch bar to the dashboard home page
+- Include HAIKU, SONNET, and OPUS primary switches for APEX/main control
+- Show the currently active model clearly
+- Optionally expose quick per-agent toggles in an expandable section
+- Reuse the same backend model APIs as the broader control surfaces
 
 ## Acceptance Criteria
-- [ ] Spec needs explicit completion criteria
+- [ ] Homepage shows a visible quick-switch bar without cluttering the layout
+- [ ] Main quick actions change the intended model state through the existing API path
+- [ ] Current active model is visually obvious
+- [ ] Quick-switch interactions require reasonable confirmation/safety
+- [ ] Homepage remains usable on desktop and mobile
 
 ## Constraints / Requirements
-- Preserve historical task context
+- Keep the homepage focused and fast
+- Reuse model-control plumbing from task-083/084
+- Optimize for Ronald’s most common actions, not edge-case configuration
 
 ## Context / Handoff
-Legacy task with thin historical notes.
+The full model panel is useful for deep control, but Ronald often just needs an immediate mode change. This task provides the shortcut layer. It is intentionally narrower than task-084 and should feel like an operator hotbar rather than a settings screen.
 
 ## Verification
-Verification not yet standardized.
+Open the homepage, confirm the quick-switch bar renders, active model state is shown, and at least one quick-switch action updates through the expected backend path.

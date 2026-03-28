@@ -1,19 +1,25 @@
 # task-063 — Product: Contractor AI Prompt Pack — list on Gumroad and make first sale
 
 ## Objective
-Legacy task migrated without a full objective yet.
+Take the completed Contractor AI Prompt Pack from finished artifact to live commercial listing and first-sale readiness.
 
 ## Scope
-- Legacy task; scope needs cleanup if this task is reactivated
+- Preserve final product artifact location
+- Prepare/maintain listing readiness
+- Track the blocker around Gumroad credentials/account access
+- Keep the commercial next step explicit
 
 ## Acceptance Criteria
-- [ ] Spec needs explicit completion criteria
+- [ ] Product artifact path is preserved
+- [ ] Listing blocker is explicit and human-actionable
+- [ ] A future operator knows the next exact step once credentials exist
 
 ## Constraints / Requirements
-- Preserve historical task context
+- Do not mark commercially live until listing and purchase path exist
+- Maintain distinction between built product and listed product
 
 ## Context / Handoff
-Product DONE: contractor-ai-prompt-pack-2026-03-22.pdf (273KB) in /Users/openclaw/reports/. Discord: #contractor-ai-prompt-pack. BLOCKER: Ronald must create Gumroad account and provide credentials. APEX will handle listing once credentials are available.
+The PDF is already complete, but Gumroad account access is the blocker. This task needs to remain commercially honest: product built, listing blocked.
 
 ## Verification
-Gumroad listing live, product purchasable, first sale confirmed
+Confirm the product file exists and the notes accurately describe the credentials blocker.
