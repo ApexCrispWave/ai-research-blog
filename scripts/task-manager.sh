@@ -78,10 +78,83 @@ spec_ready() {
     return 0
 }
 
+normalize_repo_status() {
+    local status="${1:-}"
+    case "$status" in
+        "" ) echo "missing" ;;
+        linked|ready|active|missing|blocked|archived|planned|unknown|not-required) echo "$status" ;;
+        *) echo "$status" ;;
+    esac
+}
+
+bool_json() {
+    local val="${1:-false}"
+    case "$val" in
+        true|TRUE|1|yes|YES) echo true ;;
+        *) echo false ;;
+    esac
+}
+
+infer_github_required_text() {
+    python3 - "$@" <<'PY'
+import sys
+blob = ' '.join(sys.argv[1:]).lower()
+keywords = [
+    'software', 'codebase', 'coding', 'bug', 'refactor', 'dashboard', 'api', 'web app',
+    'ios app', 'android app', 'watchos', 'macos app', 'flutter', 'next.js', 'react',
+    'plugin', 'oauth', 'mvp app', 'token usage dashboard', 'model control panel', 'operator cockpit'
+]
+project_markers = ['crispwave dashboard', 'heartwatch', 'bookforge', 'budget app']
+assignee_markers = ['claude-code', 'codex', 'agent:forge', 'agent:heartwatch']
+result = any(k in blob for k in keywords) or any(p in blob for p in project_markers) or any(a in blob for a in assignee_markers)
+print('true' if result else 'false')
+PY
+}
+
+compute_execution_ready() {
+    local spec_ready_val="$1" github_required="$2" repo_name="$3" repo_url="$4" repo_status="$5"
+    if [ "$spec_ready_val" != "true" ]; then
+        echo false
+        return
+    fi
+    if [ "$github_required" = "true" ]; then
+        if [ -z "$repo_name" ] && [ -z "$repo_url" ]; then
+            echo false
+            return
+        fi
+        case "$repo_status" in
+            linked|ready|active) echo true ;;
+            *) echo false ;;
+        esac
+        return
+    fi
+    echo true
+}
+
+execution_block_reason() {
+    local spec_ready_val="$1" github_required="$2" repo_name="$3" repo_url="$4" repo_status="$5"
+    if [ "$spec_ready_val" != "true" ]; then
+        echo "spec-incomplete"
+        return
+    fi
+    if [ "$github_required" = "true" ]; then
+        if [ -z "$repo_name" ] && [ -z "$repo_url" ]; then
+            echo "github-repo-missing"
+            return
+        fi
+        case "$repo_status" in
+            linked|ready|active) echo "ready" ;;
+            *) echo "repo-$repo_status" ;;
+        esac
+        return
+    fi
+    echo "ready"
+}
+
 print_spec_template() {
     local task_id="$1"
     local title="$2"
-    cat <<EOF
+    cat <<SPEC
 # $task_id — $title
 
 ## Objective
@@ -98,37 +171,41 @@ Describe what this task is and the outcome we need.
 
 ## Constraints / Requirements
 - Any constraints, dependencies, tooling rules, limits, non-goals
+- If this is a coding/software task, attach a GitHub repo before execution starts.
 
 ## Context / Handoff
 Enough detail that a new model, agent, or employee can pick this up cold.
+Include repo linkage (repo name + URL) for coding tasks.
 
 ## Verification
 How to verify the work is actually complete.
-EOF
+SPEC
 }
 
 usage() {
-    cat << 'EOF'
+    cat << 'USAGE'
 CrispWave Task Manager v3
 
 Usage: task-manager.sh <command> [options]
 
 Commands:
   list [--status STATUS] [--assignee NAME] [--priority LEVEL]
-      List tasks with optional filters and spec-readiness markers.
+      List tasks with optional filters and spec/execution-readiness markers.
 
   add --title "TITLE" [--priority PRIORITY] [--assignee NAME] [--notes "NOTES"] [--source SOURCE]
       [--description "SUMMARY"] [--spec-file PATH] [--skip-spec]
+      [--github-required true|false] [--repo-name NAME] [--repo-url URL] [--repo-status STATUS]
       Add a new task. Serious tasks are expected to have a spec.
       If no spec is provided, a draft spec file is created automatically.
+      Coding/software tasks should set --github-required true and attach repo linkage.
 
   update TASK_ID --status STATUS --actor ACTOR [--notes "NOTES"] [--reason "REASON"] [--force]
       Update task status.
-      Enforcement: task cannot move to in-progress or done unless specReady=true,
+      Enforcement: task cannot move to in-progress or done unless executionReady=true,
       unless --force is used by actor apex or ronald.
 
   show TASK_ID
-      Show full task details including spec path, readiness, and audit history.
+      Show full task details including spec path, repo linkage, execution readiness, and audit history.
 
   spec TASK_ID [--edit]
       Print the task spec path and contents. --edit opens in $EDITOR if set.
@@ -139,17 +216,31 @@ Commands:
   set-description TASK_ID --description "TEXT" --actor ACTOR
       Update task short description/summary field.
 
+  set-github TASK_ID --actor ACTOR [--required true|false] [--repo-name NAME] [--repo-url URL] [--repo-status STATUS]
+      Attach or update GitHub repo linkage.
+      Typical coding flow: set-github TASK --required true --repo-name owner/repo --repo-url https://github.com/owner/repo --repo-status linked
+
+  clear-github TASK_ID --actor ACTOR
+      Remove repo linkage and reset repo status to missing.
+
+  github TASK_ID
+      Show GitHub linkage for one task.
+
   refresh-spec [TASK_ID]
-      Recompute spec metadata for one task or all tasks.
+      Recompute spec metadata and execution readiness for one task or all tasks.
+
+  migrate-github
+      Backfill github_required / repo_status / execution_ready for existing tasks.
+      Uses lightweight heuristics for older coding/software tasks.
 
   audit [TASK_ID]
       Show audit trail.
 
   stats
-      Show task statistics including spec readiness.
+      Show task statistics including spec and execution readiness.
 
   board
-      Show formatted task board with spec status.
+      Show formatted task board with spec status, repo linkage, and execution readiness.
 
 Rules:
   - Only 'apex' or 'ronald' can mark tasks as 'done'
@@ -157,7 +248,8 @@ Rules:
   - All changes are logged to task-audit.jsonl
   - File locking prevents concurrent corruption
   - Tasks without a complete spec are NOT ready for delegation
-EOF
+  - Coding/software tasks without GitHub repo linkage are NOT ready for execution or delegation
+USAGE
 }
 
 refresh_one_task() {
@@ -175,13 +267,45 @@ refresh_one_task() {
             completeness="ready"
         fi
     fi
-    jq --arg id "$task_id" --arg path "$spec_path" --arg completeness "$completeness" --arg now "$now" --argjson words "$words" --argjson ready "$ready" '
+
+    local title description notes assignee project github_required repo_name repo_url repo_status execution_ready block_reason
+    title=$(jq -r --arg id "$task_id" '.tasks[] | select(.id == $id) | (.title // "")' "$TASKS_FILE")
+    description=$(jq -r --arg id "$task_id" '.tasks[] | select(.id == $id) | (.description // "")' "$TASKS_FILE")
+    notes=$(jq -r --arg id "$task_id" '.tasks[] | select(.id == $id) | (.notes // "")' "$TASKS_FILE")
+    assignee=$(jq -r --arg id "$task_id" '.tasks[] | select(.id == $id) | (.assignee // "")' "$TASKS_FILE")
+    project=$(jq -r --arg id "$task_id" '.tasks[] | select(.id == $id) | (.project // "")' "$TASKS_FILE")
+    github_required=$(jq -r --arg id "$task_id" '.tasks[] | select(.id == $id) | .github_required // empty' "$TASKS_FILE")
+    if [ -z "$github_required" ] || [ "$github_required" = "null" ]; then
+        github_required=$(infer_github_required_text "$title" "$description" "$notes" "$assignee" "$project")
+    fi
+    repo_name=$(jq -r --arg id "$task_id" '.tasks[] | select(.id == $id) | .repo_name // ""' "$TASKS_FILE")
+    repo_url=$(jq -r --arg id "$task_id" '.tasks[] | select(.id == $id) | .repo_url // ""' "$TASKS_FILE")
+    repo_status=$(jq -r --arg id "$task_id" '.tasks[] | select(.id == $id) | .repo_status // empty' "$TASKS_FILE")
+    repo_status=$(normalize_repo_status "$repo_status")
+    if [ "$github_required" = "true" ] && [ -z "$repo_name" ] && [ -z "$repo_url" ] && { [ "$repo_status" = "missing" ] || [ "$repo_status" = "not-required" ]; }; then
+        repo_status="missing"
+    elif [ "$github_required" != "true" ] && [ -z "$repo_name" ] && [ -z "$repo_url" ]; then
+        repo_status="not-required"
+    fi
+    execution_ready=$(compute_execution_ready "$ready" "$github_required" "$repo_name" "$repo_url" "$repo_status")
+    block_reason=$(execution_block_reason "$ready" "$github_required" "$repo_name" "$repo_url" "$repo_status")
+
+    jq --arg id "$task_id" --arg path "$spec_path" --arg completeness "$completeness" --arg now "$now" \
+       --argjson words "$words" --argjson ready "$ready" --argjson githubRequired "$github_required" \
+       --arg repoName "$repo_name" --arg repoUrl "$repo_url" --arg repoStatus "$repo_status" \
+       --argjson executionReady "$execution_ready" --arg blockReason "$block_reason" '
       (.tasks[] | select(.id == $id)).spec.path = $path |
       (.tasks[] | select(.id == $id)).spec.wordCount = $words |
       (.tasks[] | select(.id == $id)).spec.completeness = $completeness |
       (.tasks[] | select(.id == $id)).spec.ready = $ready |
+      (.tasks[] | select(.id == $id)).github_required = $githubRequired |
+      (.tasks[] | select(.id == $id)).repo_name = ($repoName | if . == "" then null else . end) |
+      (.tasks[] | select(.id == $id)).repo_url = ($repoUrl | if . == "" then null else . end) |
+      (.tasks[] | select(.id == $id)).repo_status = $repoStatus |
+      (.tasks[] | select(.id == $id)).execution_ready = $executionReady |
+      (.tasks[] | select(.id == $id)).execution_block_reason = $blockReason |
       (.tasks[] | select(.id == $id)).updatedAt = $now |
-      .meta.version = 3 |
+      .meta.version = 4 |
       .meta.lastModified = $now
     ' "$TASKS_FILE" > /tmp/tasks-refresh.json
     mv /tmp/tasks-refresh.json "$TASKS_FILE"
@@ -203,12 +327,13 @@ cmd_list() {
     [ -n "$assignee_filter" ] && filter="$filter | map(select(.assignee == \"$assignee_filter\"))"
     [ -n "$priority_filter" ] && filter="$filter | map(select(.priority == \"$priority_filter\"))"
 
-    jq -r "$filter | .[] | [(.id),(.status),(.priority // \"-\"),(.assignee // \"-\"),((.spec.completeness // \"missing\")),(.title)] | @tsv" "$TASKS_FILE" | \
+    jq -r "$filter | .[] | [(.id),(.status),(.priority // \"-\"),(.assignee // \"-\"),((.spec.completeness // \"missing\")),((.execution_ready // false)|tostring),((.repo_name // .repo_url // \"-\")),(.title)] | @tsv" "$TASKS_FILE" | \
         column -t -s $'\t'
 }
 
 cmd_add() {
     local title="" priority="medium" assignee="apex" notes="" source="apex" description="" spec_file="" skip_spec=false
+    local github_required="" repo_name="" repo_url="" repo_status="missing"
     while [[ $# -gt 0 ]]; do
         case "$1" in
             --title) title="$2"; shift 2 ;;
@@ -219,13 +344,17 @@ cmd_add() {
             --description) description="$2"; shift 2 ;;
             --spec-file) spec_file="$2"; shift 2 ;;
             --skip-spec) skip_spec=true; shift ;;
+            --github-required) github_required="$2"; shift 2 ;;
+            --repo-name) repo_name="$2"; shift 2 ;;
+            --repo-url) repo_url="$2"; shift 2 ;;
+            --repo-status) repo_status="$2"; shift 2 ;;
             *) shift ;;
         esac
     done
     [ -z "$title" ] && { echo "ERROR: --title required" >&2; exit 1; }
 
     acquire_lock
-    local new_id now spec_path
+    local new_id now spec_path github_required_json
     new_id=$(next_id)
     now=$(date -u +%Y-%m-%dT%H:%M:%SZ)
     spec_path=$(spec_path_for "$new_id")
@@ -234,6 +363,15 @@ cmd_add() {
         cp "$spec_file" "$spec_path"
     elif [ "$skip_spec" = false ]; then
         print_spec_template "$new_id" "$title" > "$spec_path"
+    fi
+
+    if [ -z "$github_required" ]; then
+        github_required=$(infer_github_required_text "$title" "$description" "$notes" "$assignee")
+    fi
+    github_required_json=$(bool_json "$github_required")
+    repo_status=$(normalize_repo_status "$repo_status")
+    if [ "$github_required_json" != "true" ] && [ -z "$repo_name" ] && [ -z "$repo_url" ]; then
+        repo_status="not-required"
     fi
 
     jq --arg id "$new_id" \
@@ -245,6 +383,10 @@ cmd_add() {
        --arg description "$description" \
        --arg specPath "$spec_path" \
        --arg now "$now" \
+       --arg repoName "$repo_name" \
+       --arg repoUrl "$repo_url" \
+       --arg repoStatus "$repo_status" \
+       --argjson githubRequired "$github_required_json" \
        '.tasks += [{
            id: $id,
            title: $title,
@@ -256,29 +398,43 @@ cmd_add() {
            notes: $notes,
            createdAt: $now,
            updatedAt: $now,
+           github_required: $githubRequired,
+           repo_name: ($repoName | if . == "" then null else . end),
+           repo_url: ($repoUrl | if . == "" then null else . end),
+           repo_status: $repoStatus,
+           execution_ready: false,
+           execution_block_reason: "spec-incomplete",
            spec: {path: $specPath, ready: false, completeness: "missing", wordCount: 0},
            statusHistory: [{"status":"pending","at":$now,"by":$source}]
-       }] | .meta.lastModified = $now | .meta.lastModifiedBy = $source | .meta.version = 3' "$TASKS_FILE" > /tmp/tasks-new.json
+       }] | .meta.lastModified = $now | .meta.lastModifiedBy = $source | .meta.version = 4' "$TASKS_FILE" > /tmp/tasks-new.json
     mv /tmp/tasks-new.json "$TASKS_FILE"
 
     refresh_one_task "$new_id" "$now"
-    audit "created" "$new_id" "$source" "title=$title priority=$priority"
+    audit "created" "$new_id" "$source" "title=$title priority=$priority github_required=$github_required_json repo=${repo_name:-$repo_url}"
     echo "$new_id"
     if [ -f "$spec_path" ]; then
         echo "SPEC: $spec_path" >&2
     fi
 }
 
-enforce_spec_ready_for_status() {
+enforce_execution_ready_for_status() {
     local task_id="$1" new_status="$2" actor="$3" force="$4"
     if [[ "$new_status" =~ ^(in-progress|done)$ ]]; then
-        local ready
-        ready=$(jq -r --arg id "$task_id" '.tasks[] | select(.id == $id) | (.spec.ready // false)' "$TASKS_FILE")
-        if [ "$ready" != "true" ]; then
+        local execution_ready github_required repo_name repo_url block_reason
+        execution_ready=$(jq -r --arg id "$task_id" '.tasks[] | select(.id == $id) | (.execution_ready // false)' "$TASKS_FILE")
+        github_required=$(jq -r --arg id "$task_id" '.tasks[] | select(.id == $id) | (.github_required // false)' "$TASKS_FILE")
+        repo_name=$(jq -r --arg id "$task_id" '.tasks[] | select(.id == $id) | (.repo_name // "")' "$TASKS_FILE")
+        repo_url=$(jq -r --arg id "$task_id" '.tasks[] | select(.id == $id) | (.repo_url // "")' "$TASKS_FILE")
+        block_reason=$(jq -r --arg id "$task_id" '.tasks[] | select(.id == $id) | (.execution_block_reason // "execution-blocked")' "$TASKS_FILE")
+        if [ "$execution_ready" != "true" ]; then
             if [ "$force" = true ] && { [ "$actor" = "apex" ] || [ "$actor" = "ronald" ]; }; then
                 return 0
             fi
-            echo "ERROR: Task $task_id is not spec-ready. Add/update spec before moving to $new_status." >&2
+            if [ "$github_required" = "true" ] && [ -z "$repo_name" ] && [ -z "$repo_url" ]; then
+                echo "ERROR: Task $task_id is blocked for execution. Coding/software tasks require GitHub repo linkage before moving to $new_status. Use: task-manager.sh set-github $task_id --actor $actor --required true --repo-name owner/repo --repo-url https://github.com/owner/repo --repo-status linked" >&2
+            else
+                echo "ERROR: Task $task_id is not execution-ready ($block_reason). Add/update spec and GitHub linkage before moving to $new_status." >&2
+            fi
             exit 1
         fi
     fi
@@ -325,7 +481,10 @@ cmd_update() {
     esac
     [ "$valid" = false ] && { echo "ERROR: Invalid transition: $current_status → $new_status" >&2; exit 1; }
 
-    enforce_spec_ready_for_status "$task_id" "$new_status" "$actor" "$force"
+    local refresh_now
+    refresh_now=$(date -u +%Y-%m-%dT%H:%M:%SZ)
+    refresh_one_task "$task_id" "$refresh_now"
+    enforce_execution_ready_for_status "$task_id" "$new_status" "$actor" "$force"
 
     acquire_lock
     now=$(date -u +%Y-%m-%dT%H:%M:%SZ)
@@ -355,6 +514,9 @@ cmd_show() {
     local task_id="$1"
     echo -e "${BLUE}═══ Task Details ═══${NC}"
     jq -r --arg id "$task_id" '.tasks[] | select(.id == $id)' "$TASKS_FILE"
+    echo ""
+    echo -e "${BLUE}═══ Execution Gate ═══${NC}"
+    jq -r --arg id "$task_id" '.tasks[] | select(.id == $id) | "github_required=\(.github_required // false)\nrepo_name=\(.repo_name // "-")\nrepo_url=\(.repo_url // "-")\nrepo_status=\(.repo_status // "missing")\nexecution_ready=\(.execution_ready // false)\nexecution_block_reason=\(.execution_block_reason // "unknown")"' "$TASKS_FILE"
     echo ""
     local spec_path
     spec_path=$(jq -r --arg id "$task_id" '.tasks[] | select(.id == $id) | .spec.path // empty' "$TASKS_FILE")
@@ -431,8 +593,85 @@ cmd_set_description() {
       .meta.lastModifiedBy = $actor
     ' "$TASKS_FILE" > /tmp/tasks-desc.json
     mv /tmp/tasks-desc.json "$TASKS_FILE"
+    refresh_one_task "$task_id" "$now"
     audit "description_set" "$task_id" "$actor" "description updated"
     echo "✅ Updated description for $task_id"
+}
+
+cmd_set_github() {
+    local task_id="$1"; shift
+    local actor="" required="" repo_name="" repo_url="" repo_status=""
+    while [[ $# -gt 0 ]]; do
+        case "$1" in
+            --actor) actor="$2"; shift 2 ;;
+            --required) required="$2"; shift 2 ;;
+            --repo-name) repo_name="$2"; shift 2 ;;
+            --repo-url) repo_url="$2"; shift 2 ;;
+            --repo-status) repo_status="$2"; shift 2 ;;
+            *) shift ;;
+        esac
+    done
+    [ -z "$actor" ] && { echo "ERROR: --actor required" >&2; exit 1; }
+    [ -z "$required" ] && required=$(jq -r --arg id "$task_id" '.tasks[] | select(.id == $id) | (.github_required // false)' "$TASKS_FILE")
+    required=$(bool_json "$required")
+    if [ -z "$repo_name" ]; then
+        repo_name=$(jq -r --arg id "$task_id" '.tasks[] | select(.id == $id) | (.repo_name // "")' "$TASKS_FILE")
+    fi
+    if [ -z "$repo_url" ]; then
+        repo_url=$(jq -r --arg id "$task_id" '.tasks[] | select(.id == $id) | (.repo_url // "")' "$TASKS_FILE")
+    fi
+    if [ -z "$repo_status" ]; then
+        repo_status=$(jq -r --arg id "$task_id" '.tasks[] | select(.id == $id) | (.repo_status // "missing")' "$TASKS_FILE")
+    fi
+    repo_status=$(normalize_repo_status "$repo_status")
+    acquire_lock
+    local now
+    now=$(date -u +%Y-%m-%dT%H:%M:%SZ)
+    jq --arg id "$task_id" --arg actor "$actor" --arg now "$now" --arg repoName "$repo_name" --arg repoUrl "$repo_url" --arg repoStatus "$repo_status" --argjson required "$required" '
+      (.tasks[] | select(.id == $id)).github_required = $required |
+      (.tasks[] | select(.id == $id)).repo_name = ($repoName | if . == "" then null else . end) |
+      (.tasks[] | select(.id == $id)).repo_url = ($repoUrl | if . == "" then null else . end) |
+      (.tasks[] | select(.id == $id)).repo_status = $repoStatus |
+      (.tasks[] | select(.id == $id)).updatedAt = $now |
+      .meta.lastModified = $now |
+      .meta.lastModifiedBy = $actor
+    ' "$TASKS_FILE" > /tmp/tasks-github.json
+    mv /tmp/tasks-github.json "$TASKS_FILE"
+    refresh_one_task "$task_id" "$now"
+    audit "github_set" "$task_id" "$actor" "required=$required repo=${repo_name:-$repo_url} status=$repo_status"
+    echo "✅ Updated GitHub linkage for $task_id"
+}
+
+cmd_clear_github() {
+    local task_id="$1"; shift
+    local actor=""
+    while [[ $# -gt 0 ]]; do
+        case "$1" in
+            --actor) actor="$2"; shift 2 ;;
+            *) shift ;;
+        esac
+    done
+    [ -z "$actor" ] && { echo "ERROR: --actor required" >&2; exit 1; }
+    acquire_lock
+    local now
+    now=$(date -u +%Y-%m-%dT%H:%M:%SZ)
+    jq --arg id "$task_id" --arg actor "$actor" --arg now "$now" '
+      (.tasks[] | select(.id == $id)).repo_name = null |
+      (.tasks[] | select(.id == $id)).repo_url = null |
+      (.tasks[] | select(.id == $id)).repo_status = "missing" |
+      (.tasks[] | select(.id == $id)).updatedAt = $now |
+      .meta.lastModified = $now |
+      .meta.lastModifiedBy = $actor
+    ' "$TASKS_FILE" > /tmp/tasks-github-clear.json
+    mv /tmp/tasks-github-clear.json "$TASKS_FILE"
+    refresh_one_task "$task_id" "$now"
+    audit "github_cleared" "$task_id" "$actor" "repo linkage cleared"
+    echo "✅ Cleared GitHub linkage for $task_id"
+}
+
+cmd_github() {
+    local task_id="$1"
+    jq -r --arg id "$task_id" '.tasks[] | select(.id == $id) | "Task: \(.id) — \(.title)\ngithub_required: \(.github_required // false)\nrepo_name: \(.repo_name // "-")\nrepo_url: \(.repo_url // "-")\nrepo_status: \(.repo_status // "missing")\nexecution_ready: \(.execution_ready // false)\nexecution_block_reason: \(.execution_block_reason // "unknown")"' "$TASKS_FILE"
 }
 
 cmd_refresh_spec() {
@@ -450,6 +689,42 @@ cmd_refresh_spec() {
         done
         echo "✅ Refreshed all task spec metadata"
     fi
+}
+
+cmd_migrate_github() {
+    local now
+    now=$(date -u +%Y-%m-%dT%H:%M:%SZ)
+    acquire_lock
+    python3 - "$TASKS_FILE" <<'PY'
+import json, sys
+from pathlib import Path
+p = Path(sys.argv[1])
+data = json.loads(p.read_text())
+keywords = [
+    'software', 'codebase', 'coding', 'bug', 'refactor', 'dashboard', 'api', 'web app',
+    'ios app', 'android app', 'watchos', 'macos app', 'flutter', 'next.js', 'react',
+    'plugin', 'oauth', 'mvp app', 'token usage dashboard', 'model control panel', 'operator cockpit'
+]
+project_markers = ['crispwave dashboard', 'heartwatch', 'bookforge', 'budget app']
+assignee_markers = ['claude-code', 'codex', 'agent:forge', 'agent:heartwatch']
+def infer(task):
+    blob = ' '.join(str(task.get(k,'')) for k in ('title','description','notes','assignee','project')).lower()
+    return any(k in blob for k in keywords) or any(p1 in blob for p1 in project_markers) or any(a in blob for a in assignee_markers)
+for task in data.get('tasks', []):
+    if not (task.get('repo_name') or task.get('repo_url')):
+        task['github_required'] = infer(task)
+        task['repo_status'] = 'missing' if task['github_required'] else 'not-required'
+p.write_text(json.dumps(data, indent=2))
+PY
+    local ids
+    ids=$(jq -r '.tasks[].id' "$TASKS_FILE")
+    for id in $ids; do
+        refresh_one_task "$id" "$now"
+    done
+    jq --arg now "$now" '.meta.version = 4 | .meta.lastModified = $now | .meta.lastModifiedBy = "apex"' "$TASKS_FILE" > /tmp/tasks-migrate.json
+    mv /tmp/tasks-migrate.json "$TASKS_FILE"
+    audit "github_migrated" "all" "apex" "backfilled github_required/repo_status/execution_ready"
+    echo "✅ Migrated GitHub execution metadata across all tasks"
 }
 
 cmd_audit() {
@@ -471,7 +746,9 @@ print(f'Total: {len(tasks)}')
 for label, status in [('Done','done'), ('In Progress','in-progress'), ('Pending','pending'), ('Blocked','blocked'), ('On Hold','on-hold'), ('Cancelled','cancelled')]:
     print(f'{label}: {sum(1 for t in tasks if t.get("status") == status)}')
 print(f'Spec Ready: {sum(1 for t in tasks if (t.get("spec") or {}).get("ready") is True)}')
-print(f'Spec Missing/Draft: {sum(1 for t in tasks if (t.get("spec") or {}).get("ready") is not True)}')
+print(f'Execution Ready: {sum(1 for t in tasks if t.get("execution_ready") is True)}')
+print(f'GitHub Required: {sum(1 for t in tasks if t.get("github_required") is True)}')
+print(f'GitHub Missing: {sum(1 for t in tasks if t.get("github_required") is True and not (t.get("repo_name") or t.get("repo_url")))}')
 PY2
 }
 
@@ -482,7 +759,7 @@ cmd_board() {
     echo ""
 
     local ip
-    ip=$(jq -r '.tasks[] | select(.status == "in-progress") | "🔄 \(.id) — \(.title) [\(.assignee // "unassigned")] · spec: \((.spec.completeness // "missing"))"' "$TASKS_FILE")
+    ip=$(jq -r '.tasks[] | select(.status == "in-progress") | "🔄 \(.id) — \(.title) [\(.assignee // "unassigned")] · exec: \((.execution_ready // false)) · repo: \((.repo_name // .repo_url // "-")) [\(.repo_status // "missing")]"' "$TASKS_FILE")
     if [ -n "$ip" ]; then
         echo "**🔄 In Progress:**"
         echo "$ip"
@@ -490,7 +767,7 @@ cmd_board() {
     fi
 
     local pend
-    pend=$(jq -r '.tasks[] | select(.status == "pending") | "⏳ \(.id) — \(.title) · spec: \((.spec.completeness // "missing"))"' "$TASKS_FILE")
+    pend=$(jq -r '.tasks[] | select(.status == "pending") | "⏳ \(.id) — \(.title) · exec: \((.execution_ready // false)) · repo: \((.repo_name // .repo_url // "-")) [\(.repo_status // "missing")]"' "$TASKS_FILE")
     if [ -n "$pend" ]; then
         echo "**⏳ Pending:**"
         echo "$pend"
@@ -498,17 +775,19 @@ cmd_board() {
     fi
 
     local blocked
-    blocked=$(jq -r '.tasks[] | select(.status == "blocked") | "🚫 \(.id) — \(.title) · spec: \((.spec.completeness // "missing"))"' "$TASKS_FILE")
+    blocked=$(jq -r '.tasks[] | select(.status == "blocked") | "🚫 \(.id) — \(.title) · exec: \((.execution_ready // false)) · repo: \((.repo_name // .repo_url // "-")) [\(.repo_status // "missing")]"' "$TASKS_FILE")
     if [ -n "$blocked" ]; then
         echo "**🚫 Blocked:**"
         echo "$blocked"
         echo ""
     fi
 
-    local ready total
-    ready=$(jq '[.tasks[] | select(.spec.ready == true)] | length' "$TASKS_FILE")
+    local ready total repo_missing
+    ready=$(jq '[.tasks[] | select(.execution_ready == true)] | length' "$TASKS_FILE")
     total=$(jq '.tasks | length' "$TASKS_FILE")
-    echo "**Spec Readiness:** $ready/$total ready for clean handoff"
+    repo_missing=$(jq '[.tasks[] | select(.github_required == true and ((.repo_name // .repo_url // "") == ""))] | length' "$TASKS_FILE")
+    echo "**Execution Readiness:** $ready/$total ready for clean handoff"
+    echo "**GitHub Missing on Required Tasks:** $repo_missing"
 }
 
 case "${1:-help}" in
@@ -519,7 +798,11 @@ case "${1:-help}" in
     spec) shift; cmd_spec "$@" ;;
     attach-spec) shift; cmd_attach_spec "$@" ;;
     set-description) shift; cmd_set_description "$@" ;;
+    set-github) shift; cmd_set_github "$@" ;;
+    clear-github) shift; cmd_clear_github "$@" ;;
+    github) shift; cmd_github "$1" ;;
     refresh-spec) shift; cmd_refresh_spec "$@" ;;
+    migrate-github) shift; cmd_migrate_github ;;
     audit) shift; cmd_audit "${1:-}" ;;
     stats) shift; cmd_stats ;;
     board) shift; cmd_board ;;

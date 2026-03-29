@@ -62,9 +62,33 @@ def spec_state(task):
     return spec.get('completeness', 'missing')
 
 
+def repo_summary(task):
+    repo_name = task.get('repo_name') or '-'
+    repo_status = task.get('repo_status') or ('required-missing' if task.get('github_required') else 'not-required')
+    return f'{repo_name} ({repo_status})'
+
+
 def ready_for_delegation(task):
+    if 'execution_ready' in task:
+        return task.get('execution_ready') is True
     spec = task.get('spec') or {}
-    return spec.get('ready') is True
+    if spec.get('ready') is not True:
+        return False
+    if task.get('github_required'):
+        return bool(task.get('repo_name') or task.get('repo_url')) and (task.get('repo_status') in {'linked', 'ready', 'active'})
+    return True
+
+
+def execution_block_reason(task):
+    spec = task.get('spec') or {}
+    if spec.get('ready') is not True:
+        return f'spec:{spec_state(task)}'
+    if task.get('github_required'):
+        if not (task.get('repo_name') or task.get('repo_url')):
+            return 'github:missing-repo'
+        if task.get('repo_status') not in {'linked', 'ready', 'active'}:
+            return f'github:{task.get("repo_status") or "missing-status"}'
+    return 'ready'
 
 
 def get_next_task(tasks_data, queue_data):
@@ -88,8 +112,8 @@ def status(tasks_data, queue_data):
         s = t.get('status', '?')
         statuses[s] = statuses.get(s, 0) + 1
 
-    spec_ready = len([t for t in tasks if ready_for_delegation(t)])
-    spec_missing = len([t for t in tasks if spec_state(t) != 'ready'])
+    execution_ready = len([t for t in tasks if ready_for_delegation(t)])
+    execution_blocked = len([t for t in tasks if not ready_for_delegation(t)])
     pending_unready = [t for t in tasks if t.get('status') == 'pending' and not ready_for_delegation(t)]
 
     print("=" * 60)
@@ -98,8 +122,8 @@ def status(tasks_data, queue_data):
     print(f"Total tasks: {len(tasks)}")
     for s, count in sorted(statuses.items()):
         print(f"  {s:15} {count}")
-    print(f"  {'spec-ready':15} {spec_ready}")
-    print(f"  {'spec-missing':15} {spec_missing}")
+    print(f"  {'exec-ready':15} {execution_ready}")
+    print(f"  {'exec-blocked':15} {execution_blocked}")
     print()
 
     print("AGENT SLOTS")
@@ -117,7 +141,7 @@ def status(tasks_data, queue_data):
         print("IN PROGRESS")
         print("-" * 40)
         for t in active:
-            print(f"  [{t.get('priority','?'):8}] {t['id']} — {t['title'][:45]} · spec:{spec_state(t)}")
+            print(f"  [{t.get('priority','?'):8}] {t['id']} — {t['title'][:45]} · {execution_block_reason(t)} · repo:{repo_summary(t)}")
     print()
 
     pending = [t for t in tasks if t.get('status') == 'pending' and ready_for_delegation(t)]
@@ -127,14 +151,14 @@ def status(tasks_data, queue_data):
         print("READY PENDING QUEUE")
         print("-" * 40)
         for i, t in enumerate(pending):
-            print(f"  {i+1}. [{t.get('priority','?'):8}] {t['id']} — {t['title'][:46]}")
+            print(f"  {i+1}. [{t.get('priority','?'):8}] {t['id']} — {t['title'][:46]} · repo:{repo_summary(t)}")
     print()
 
     if pending_unready:
-        print("SPEC-BLOCKED TASKS (not ready for delegation)")
+        print("EXECUTION-BLOCKED TASKS (not ready for delegation)")
         print("-" * 40)
         for t in pending_unready:
-            print(f"  {t['id']} — {t['title'][:44]} · spec:{spec_state(t)}")
+            print(f"  {t['id']} — {t['title'][:44]} · {execution_block_reason(t)} · repo:{repo_summary(t)}")
         print()
 
     blocked = [t for t in tasks if t.get('status') == 'blocked']
@@ -142,17 +166,17 @@ def status(tasks_data, queue_data):
         print(f"BLOCKED ({len(blocked)} tasks — need Ronald)")
         print("-" * 40)
         for t in blocked:
-            print(f"  {t['id']} — {t['title'][:60]}")
+            print(f"  {t['id']} — {t['title'][:60]} · repo:{repo_summary(t)}")
     print()
 
     next_task = get_next_task(tasks_data, queue_data)
     if next_task:
-        print(f"NEXT TO START: {next_task['id']} — {next_task['title'][:55]}")
+        print(f"NEXT TO START: {next_task['id']} — {next_task['title'][:55]} · repo:{repo_summary(next_task)}")
     else:
         if pending:
             print("NEXT TO START: None — all model slots full")
         elif pending_unready:
-            print("NEXT TO START: None — pending tasks exist but specs are incomplete")
+            print("NEXT TO START: None — pending tasks exist but are execution-blocked (spec and/or GitHub repo missing)")
         else:
             print("NEXT TO START: None — queue empty")
     print("=" * 60)
@@ -202,7 +226,7 @@ def check_stalls(tasks_data, queue_data):
     if stalls:
         print(f"STALLED TASKS ({len(stalls)}):")
         for t, age in stalls:
-            print(f"  {t['id']} — {t['title'][:48]} ({age:.0f} min) · spec:{spec_state(t)}")
+            print(f"  {t['id']} — {t['title'][:48]} ({age:.0f} min) · {execution_block_reason(t)} · repo:{repo_summary(t)}")
     else:
         print("No stalled tasks detected.")
     return stalls

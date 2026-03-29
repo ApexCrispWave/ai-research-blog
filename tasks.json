@@ -26,7 +26,13 @@
         "ready": false,
         "completeness": "draft"
       },
-      "updatedAt": "2026-03-28T17:18:51Z"
+      "updatedAt": "2026-03-29T02:48:18Z",
+      "github_required": false,
+      "repo_name": null,
+      "repo_url": null,
+      "repo_status": "not-required",
+      "execution_ready": false,
+      "execution_block_reason": "spec-incomplete"
     },
     {
       "id": "task-002",
@@ -53,7 +59,13 @@
         "ready": false,
         "completeness": "draft"
       },
-      "updatedAt": "2026-03-28T17:18:51Z"
+      "updatedAt": "2026-03-29T02:48:18Z",
+      "github_required": false,
+      "repo_name": null,
+      "repo_url": null,
+      "repo_status": "not-required",
+      "execution_ready": false,
+      "execution_block_reason": "spec-incomplete"
     },
     {
       "id": "task-003",
@@ -80,7 +92,13 @@
         "ready": false,
         "completeness": "draft"
       },
-      "updatedAt": "2026-03-28T17:18:51Z"
+      "updatedAt": "2026-03-29T02:48:18Z",
+      "github_required": false,
+      "repo_name": null,
+      "repo_url": null,
+      "repo_status": "not-required",
+      "execution_ready": false,
+      "execution_block_reason": "spec-incomplete"
     },
     {
       "id": "task-004",
@@ -107,7 +125,13 @@
         "ready": false,
         "completeness": "draft"
       },
-      "updatedAt": "2026-03-28T17:18:51Z"
+      "updatedAt": "2026-03-29T02:48:18Z",
+      "github_required": false,
+      "repo_name": null,
+      "repo_url": null,
+      "repo_status": "not-required",
+      "execution_ready": false,
+      "execution_block_reason": "spec-incomplete"
     },
     {
       "id": "task-005",
@@ -134,7 +158,13 @@
         "ready": false,
         "completeness": "draft"
       },
-      "updatedAt": "2026-03-28T17:18:51Z"
+      "updatedAt": "2026-03-29T02:48:18Z",
+      "github_required": false,
+      "repo_name": null,
+      "repo_url": null,
+      "repo_status": "not-required",
+      "execution_ready": false,
+      "execution_block_reason": "spec-incomplete"
     },
     {
       "id": "task-006",
@@ -161,7 +191,13 @@
         "ready": false,
         "completeness": "draft"
       },
-      "updatedAt": "2026-03-28T17:18:51Z"
+      "updatedAt": "2026-03-29T02:48:18Z",
+      "github_required": false,
+      "repo_name": null,
+      "repo_url": null,
+      "repo_status": "not-required",
+      "execution_ready": false,
+      "execution_block_reason": "spec-incomplete"
     },
     {
       "id": "task-007",
@@ -188,7 +224,13 @@
         "ready": false,
         "completeness": "draft"
       },
-      "updatedAt": "2026-03-28T17:18:51Z"
+      "updatedAt": "2026-03-29T02:48:18Z",
+      "github_required": false,
+      "repo_name": null,
+      "repo_url": null,
+      "repo_status": "not-required",
+      "execution_ready": false,
+      "execution_block_reason": "spec-incomplete"
     },
     {
       "id": "task-008",
@@ -215,7 +257,13 @@
         "ready": false,
         "completeness": "draft"
       },
-      "updatedAt": "2026-03-28T17:18:51Z"
+      "updatedAt": "2026-03-29T02:48:18Z",
+      "github_required": true,
+      "repo_name": null,
+      "repo_url": null,
+      "repo_status": "missing",
+      "execution_ready": false,
+      "execution_block_reason": "spec-incomplete"
     },
     {
       "id": "task-010",
@@ -242,7 +290,13 @@
         "ready": false,
         "completeness": "draft"
       },
-      "updatedAt": "2026-03-28T17:18:51Z"
+      "updatedAt": "2026-03-29T02:48:18Z",
+      "github_required": false,
+      "repo_name": null,
+      "repo_url": null,
+      "repo_status": "not-required",
+      "execution_ready": false,
+      "execution_block_reason": "spec-incomplete"
     },
     {
       "id": "task-014",
@@ -269,7 +323,13 @@
         "ready": false,
         "completeness": "draft"
       },
-      "updatedAt": "2026-03-28T17:18:51Z"
+      "updatedAt": "2026-03-29T02:48:18Z",
+      "github_required": false,
+      "repo_name": null,
+      "repo_url": null,
+      "repo_status": "not-required",
+      "execution_ready": false,
+      "execution_block_reason": "spec-incomplete"
     },
     {
       "id": "task-011",
@@ -296,7 +356,13 @@
         "ready": false,
         "completeness": "draft"
       },
-      "updatedAt": "2026-03-28T17:18:51Z"
+      "updatedAt": "2026-03-29T02:48:18Z",
+      "github_required": true,
+      "repo_name": null,
+      "repo_url": null,
+      "repo_status": "missing",
+      "execution_ready": false,
+      "execution_block_reason": "spec-incomplete"
     },
     {
       "id": "task-013",
@@ -323,7 +389,13 @@
         "ready": false,
         "completeness": "draft"
       },
-      "updatedAt": "2026-03-28T17:18:51Z"
+      "updatedAt": "2026-03-29T02:48:18Z",
+      "github_required": true,
+      "repo_name": null,
+      "repo_url": null,
+      "repo_status": "missing",
+      "execution_ready": false,
+      "execution_block_reason": "spec-incomplete"
     },
     {
       "id": "task-012",
@@ -351,7 +423,13 @@
         "ready": false,
         "completeness": "draft"
       },
-      "updatedAt": "2026-03-28T17:18:51Z"
+      "updatedAt": "2026-03-29T02:48:18Z",
+      "github_required": false,
+      "repo_name": null,
+      "repo_url": null,
+      "repo_status": "not-required",
+      "execution_ready": false,
+      "execution_block_reason": "spec-incomplete"
     },
     {
       "id": "task-015",
@@ -378,7 +456,13 @@
         "ready": false,
         "completeness": "draft"
       },
-      "updatedAt": "2026-03-28T17:18:51Z"
+      "updatedAt": "2026-03-29T02:48:18Z",
+      "github_required": false,
+      "repo_name": null,
+      "repo_url": null,
+      "repo_status": "not-required",
+      "execution_ready": false,
+      "execution_block_reason": "spec-incomplete"
     },
     {
       "id": "task-016",
@@ -405,7 +489,13 @@
         "ready": false,
         "completeness": "draft"
       },
-      "updatedAt": "2026-03-28T17:18:51Z"
+      "updatedAt": "2026-03-29T02:48:18Z",
+      "github_required": false,
+      "repo_name": null,
+      "repo_url": null,
+      "repo_status": "not-required",
+      "execution_ready": false,
+      "execution_block_reason": "spec-incomplete"
     },
     {
       "id": "task-017",
@@ -432,7 +522,13 @@
         "ready": false,
         "completeness": "draft"
       },
-      "updatedAt": "2026-03-28T17:18:51Z"
+      "updatedAt": "2026-03-29T02:48:18Z",
+      "github_required": false,
+      "repo_name": null,
+      "repo_url": null,
+      "repo_status": "not-required",
+      "execution_ready": false,
+      "execution_block_reason": "spec-incomplete"
     },
     {
       "id": "task-018",
@@ -459,7 +555,13 @@
         "ready": false,
         "completeness": "draft"
       },
-      "updatedAt": "2026-03-28T17:18:51Z"
+      "updatedAt": "2026-03-29T02:48:18Z",
+      "github_required": false,
+      "repo_name": null,
+      "repo_url": null,
+      "repo_status": "not-required",
+      "execution_ready": false,
+      "execution_block_reason": "spec-incomplete"
     },
     {
       "id": "task-019",
@@ -487,7 +589,13 @@
         "ready": false,
         "completeness": "draft"
       },
-      "updatedAt": "2026-03-28T17:18:51Z"
+      "updatedAt": "2026-03-29T02:48:18Z",
+      "github_required": false,
+      "repo_name": null,
+      "repo_url": null,
+      "repo_status": "not-required",
+      "execution_ready": false,
+      "execution_block_reason": "spec-incomplete"
     },
     {
       "id": "task-020",
@@ -514,7 +622,13 @@
         "ready": false,
         "completeness": "draft"
       },
-      "updatedAt": "2026-03-28T17:18:51Z"
+      "updatedAt": "2026-03-29T02:48:18Z",
+      "github_required": true,
+      "repo_name": null,
+      "repo_url": null,
+      "repo_status": "missing",
+      "execution_ready": false,
+      "execution_block_reason": "spec-incomplete"
     },
     {
       "id": "task-009",
@@ -541,7 +655,13 @@
         "ready": false,
         "completeness": "draft"
       },
-      "updatedAt": "2026-03-28T17:18:51Z"
+      "updatedAt": "2026-03-29T02:48:18Z",
+      "github_required": false,
+      "repo_name": null,
+      "repo_url": null,
+      "repo_status": "not-required",
+      "execution_ready": false,
+      "execution_block_reason": "spec-incomplete"
     },
     {
       "id": "task-021",
@@ -568,7 +688,13 @@
         "ready": false,
         "completeness": "draft"
       },
-      "updatedAt": "2026-03-28T17:18:51Z"
+      "updatedAt": "2026-03-29T02:48:18Z",
+      "github_required": false,
+      "repo_name": null,
+      "repo_url": null,
+      "repo_status": "not-required",
+      "execution_ready": false,
+      "execution_block_reason": "spec-incomplete"
     },
     {
       "id": "task-045",
@@ -595,7 +721,13 @@
         "ready": false,
         "completeness": "draft"
       },
-      "updatedAt": "2026-03-28T17:18:51Z"
+      "updatedAt": "2026-03-29T02:48:18Z",
+      "github_required": false,
+      "repo_name": null,
+      "repo_url": null,
+      "repo_status": "not-required",
+      "execution_ready": false,
+      "execution_block_reason": "spec-incomplete"
     },
     {
       "id": "task-022",
@@ -622,7 +754,13 @@
         "ready": false,
         "completeness": "draft"
       },
-      "updatedAt": "2026-03-28T17:18:51Z"
+      "updatedAt": "2026-03-29T02:48:18Z",
+      "github_required": false,
+      "repo_name": null,
+      "repo_url": null,
+      "repo_status": "not-required",
+      "execution_ready": false,
+      "execution_block_reason": "spec-incomplete"
     },
     {
       "id": "task-023",
@@ -649,7 +787,13 @@
         "ready": false,
         "completeness": "draft"
       },
-      "updatedAt": "2026-03-28T17:18:51Z"
+      "updatedAt": "2026-03-29T02:48:18Z",
+      "github_required": false,
+      "repo_name": null,
+      "repo_url": null,
+      "repo_status": "not-required",
+      "execution_ready": false,
+      "execution_block_reason": "spec-incomplete"
     },
     {
       "id": "task-024",
@@ -676,7 +820,13 @@
         "ready": false,
         "completeness": "draft"
       },
-      "updatedAt": "2026-03-28T17:18:51Z"
+      "updatedAt": "2026-03-29T02:48:18Z",
+      "github_required": true,
+      "repo_name": null,
+      "repo_url": null,
+      "repo_status": "missing",
+      "execution_ready": false,
+      "execution_block_reason": "spec-incomplete"
     },
     {
       "id": "task-025",
@@ -703,7 +853,13 @@
         "ready": false,
         "completeness": "draft"
       },
-      "updatedAt": "2026-03-28T17:18:51Z"
+      "updatedAt": "2026-03-29T02:48:18Z",
+      "github_required": true,
+      "repo_name": null,
+      "repo_url": null,
+      "repo_status": "missing",
+      "execution_ready": false,
+      "execution_block_reason": "spec-incomplete"
     },
     {
       "id": "task-026",
@@ -730,7 +886,13 @@
         "ready": false,
         "completeness": "draft"
       },
-      "updatedAt": "2026-03-28T17:18:51Z"
+      "updatedAt": "2026-03-29T02:48:18Z",
+      "github_required": true,
+      "repo_name": null,
+      "repo_url": null,
+      "repo_status": "missing",
+      "execution_ready": false,
+      "execution_block_reason": "spec-incomplete"
     },
     {
       "id": "task-027",
@@ -757,7 +919,13 @@
         "ready": false,
         "completeness": "draft"
       },
-      "updatedAt": "2026-03-28T17:18:51Z"
+      "updatedAt": "2026-03-29T02:48:18Z",
+      "github_required": true,
+      "repo_name": null,
+      "repo_url": null,
+      "repo_status": "missing",
+      "execution_ready": false,
+      "execution_block_reason": "spec-incomplete"
     },
     {
       "id": "task-046",
@@ -784,7 +952,13 @@
         "ready": false,
         "completeness": "draft"
       },
-      "updatedAt": "2026-03-28T17:18:51Z"
+      "updatedAt": "2026-03-29T02:48:18Z",
+      "github_required": true,
+      "repo_name": null,
+      "repo_url": null,
+      "repo_status": "missing",
+      "execution_ready": false,
+      "execution_block_reason": "spec-incomplete"
     },
     {
       "id": "task-028",
@@ -811,7 +985,13 @@
         "ready": false,
         "completeness": "draft"
       },
-      "updatedAt": "2026-03-28T17:18:51Z"
+      "updatedAt": "2026-03-29T02:48:18Z",
+      "github_required": true,
+      "repo_name": null,
+      "repo_url": null,
+      "repo_status": "missing",
+      "execution_ready": false,
+      "execution_block_reason": "spec-incomplete"
     },
     {
       "id": "task-029",
@@ -838,7 +1018,13 @@
         "ready": false,
         "completeness": "draft"
       },
-      "updatedAt": "2026-03-28T17:18:51Z"
+      "updatedAt": "2026-03-29T02:48:18Z",
+      "github_required": true,
+      "repo_name": null,
+      "repo_url": null,
+      "repo_status": "missing",
+      "execution_ready": false,
+      "execution_block_reason": "spec-incomplete"
     },
     {
       "id": "task-030",
@@ -865,7 +1051,13 @@
         "ready": false,
         "completeness": "draft"
       },
-      "updatedAt": "2026-03-28T17:18:51Z"
+      "updatedAt": "2026-03-29T02:48:18Z",
+      "github_required": true,
+      "repo_name": null,
+      "repo_url": null,
+      "repo_status": "missing",
+      "execution_ready": false,
+      "execution_block_reason": "spec-incomplete"
     },
     {
       "id": "task-031",
@@ -892,7 +1084,13 @@
         "ready": false,
         "completeness": "draft"
       },
-      "updatedAt": "2026-03-28T17:18:51Z"
+      "updatedAt": "2026-03-29T02:48:18Z",
+      "github_required": true,
+      "repo_name": null,
+      "repo_url": null,
+      "repo_status": "missing",
+      "execution_ready": false,
+      "execution_block_reason": "spec-incomplete"
     },
     {
       "id": "task-032",
@@ -919,24 +1117,42 @@
         "ready": false,
         "completeness": "draft"
       },
-      "updatedAt": "2026-03-28T17:18:51Z"
+      "updatedAt": "2026-03-29T02:48:18Z",
+      "github_required": true,
+      "repo_name": null,
+      "repo_url": null,
+      "repo_status": "missing",
+      "execution_ready": false,
+      "execution_block_reason": "spec-incomplete"
     },
     {
       "id": "task-033",
       "title": "GitHub integration — manage PRs, issues, CI from APEX",
       "source": "ronald",
       "assignee": "apex",
-      "status": "blocked",
+      "status": "done",
       "priority": "medium",
       "createdAt": "2026-03-20T23:29:00-07:00",
-      "completedAt": null,
+      "completedAt": "2026-03-28T21:07:59Z",
       "verify": "APEX can list/create/comment on issues; review and merge PRs; check CI status; tested on a real repo",
-      "notes": "gh CLI installed but needs GitHub auth (gh auth login) — requires browser/interactive flow. Ronald needs to run: gh auth login on the Mac Mini.",
+      "notes": "GitHub integration completed: authenticated ApexCrispWave account, created private repos, configured remotes, and pushed CrispWave software/codebase to GitHub. GitHub is now the system of record for coding work.",
       "statusHistory": [
         {
           "status": "blocked",
           "at": "2026-03-20T23:29:00-07:00",
           "by": "migrated"
+        },
+        {
+          "status": "in-progress",
+          "at": "2026-03-28T21:07:59Z",
+          "by": "apex",
+          "reason": "GitHub auth blocker removed; integration execution completed"
+        },
+        {
+          "status": "done",
+          "at": "2026-03-28T21:07:59Z",
+          "by": "apex",
+          "reason": "Work completed"
         }
       ],
       "description": "GitHub integration — manage PRs, issues, CI from APEX",
@@ -946,7 +1162,13 @@
         "ready": true,
         "completeness": "ready"
       },
-      "updatedAt": "2026-03-28T17:18:51Z"
+      "updatedAt": "2026-03-29T02:48:18Z",
+      "github_required": true,
+      "repo_name": null,
+      "repo_url": null,
+      "repo_status": "missing",
+      "execution_ready": false,
+      "execution_block_reason": "github-repo-missing"
     },
     {
       "id": "task-034",
@@ -974,7 +1196,13 @@
         "ready": false,
         "completeness": "draft"
       },
-      "updatedAt": "2026-03-28T17:18:51Z"
+      "updatedAt": "2026-03-29T02:48:18Z",
+      "github_required": false,
+      "repo_name": null,
+      "repo_url": null,
+      "repo_status": "not-required",
+      "execution_ready": false,
+      "execution_block_reason": "spec-incomplete"
     },
     {
       "id": "task-035",
@@ -1001,7 +1229,13 @@
         "ready": true,
         "completeness": "ready"
       },
-      "updatedAt": "2026-03-28T17:18:51Z"
+      "updatedAt": "2026-03-29T02:48:18Z",
+      "github_required": false,
+      "repo_name": null,
+      "repo_url": null,
+      "repo_status": "not-required",
+      "execution_ready": true,
+      "execution_block_reason": "ready"
     },
     {
       "id": "task-036",
@@ -1028,7 +1262,13 @@
         "ready": false,
         "completeness": "draft"
       },
-      "updatedAt": "2026-03-28T17:18:51Z"
+      "updatedAt": "2026-03-29T02:48:18Z",
+      "github_required": false,
+      "repo_name": null,
+      "repo_url": null,
+      "repo_status": "not-required",
+      "execution_ready": false,
+      "execution_block_reason": "spec-incomplete"
     },
     {
       "id": "task-037",
@@ -1055,7 +1295,13 @@
         "ready": false,
         "completeness": "draft"
       },
-      "updatedAt": "2026-03-28T17:18:51Z"
+      "updatedAt": "2026-03-29T02:48:18Z",
+      "github_required": true,
+      "repo_name": null,
+      "repo_url": null,
+      "repo_status": "missing",
+      "execution_ready": false,
+      "execution_block_reason": "spec-incomplete"
     },
     {
       "id": "task-038",
@@ -1082,7 +1328,13 @@
         "ready": false,
         "completeness": "draft"
       },
-      "updatedAt": "2026-03-28T17:18:51Z"
+      "updatedAt": "2026-03-29T02:48:18Z",
+      "github_required": false,
+      "repo_name": null,
+      "repo_url": null,
+      "repo_status": "not-required",
+      "execution_ready": false,
+      "execution_block_reason": "spec-incomplete"
     },
     {
       "id": "task-047",
@@ -1109,7 +1361,13 @@
         "ready": false,
         "completeness": "draft"
       },
-      "updatedAt": "2026-03-28T17:18:51Z"
+      "updatedAt": "2026-03-29T02:48:18Z",
+      "github_required": false,
+      "repo_name": null,
+      "repo_url": null,
+      "repo_status": "not-required",
+      "execution_ready": false,
+      "execution_block_reason": "spec-incomplete"
     },
     {
       "id": "task-039",
@@ -1136,7 +1394,13 @@
         "ready": false,
         "completeness": "draft"
       },
-      "updatedAt": "2026-03-28T17:18:51Z"
+      "updatedAt": "2026-03-29T02:48:18Z",
+      "github_required": true,
+      "repo_name": null,
+      "repo_url": null,
+      "repo_status": "missing",
+      "execution_ready": false,
+      "execution_block_reason": "spec-incomplete"
     },
     {
       "id": "task-040",
@@ -1163,7 +1427,13 @@
         "ready": false,
         "completeness": "draft"
       },
-      "updatedAt": "2026-03-28T17:18:51Z"
+      "updatedAt": "2026-03-29T02:48:18Z",
+      "github_required": true,
+      "repo_name": null,
+      "repo_url": null,
+      "repo_status": "missing",
+      "execution_ready": false,
+      "execution_block_reason": "spec-incomplete"
     },
     {
       "id": "task-041",
@@ -1190,7 +1460,13 @@
         "ready": false,
         "completeness": "draft"
       },
-      "updatedAt": "2026-03-28T17:18:51Z"
+      "updatedAt": "2026-03-29T02:48:18Z",
+      "github_required": true,
+      "repo_name": null,
+      "repo_url": null,
+      "repo_status": "missing",
+      "execution_ready": false,
+      "execution_block_reason": "spec-incomplete"
     },
     {
       "id": "task-042",
@@ -1217,7 +1493,13 @@
         "ready": false,
         "completeness": "draft"
       },
-      "updatedAt": "2026-03-28T17:18:51Z"
+      "updatedAt": "2026-03-29T02:48:18Z",
+      "github_required": true,
+      "repo_name": null,
+      "repo_url": null,
+      "repo_status": "missing",
+      "execution_ready": false,
+      "execution_block_reason": "spec-incomplete"
     },
     {
       "id": "task-048",
@@ -1244,7 +1526,13 @@
         "ready": false,
         "completeness": "draft"
       },
-      "updatedAt": "2026-03-28T17:18:51Z"
+      "updatedAt": "2026-03-29T02:48:18Z",
+      "github_required": true,
+      "repo_name": null,
+      "repo_url": null,
+      "repo_status": "missing",
+      "execution_ready": false,
+      "execution_block_reason": "spec-incomplete"
     },
     {
       "id": "task-043",
@@ -1271,7 +1559,13 @@
         "ready": false,
         "completeness": "draft"
       },
-      "updatedAt": "2026-03-28T17:18:51Z"
+      "updatedAt": "2026-03-29T02:48:18Z",
+      "github_required": true,
+      "repo_name": null,
+      "repo_url": null,
+      "repo_status": "missing",
+      "execution_ready": false,
+      "execution_block_reason": "spec-incomplete"
     },
     {
       "id": "task-049",
@@ -1298,7 +1592,13 @@
         "ready": false,
         "completeness": "draft"
       },
-      "updatedAt": "2026-03-28T17:18:51Z"
+      "updatedAt": "2026-03-29T02:48:18Z",
+      "github_required": true,
+      "repo_name": null,
+      "repo_url": null,
+      "repo_status": "missing",
+      "execution_ready": false,
+      "execution_block_reason": "spec-incomplete"
     },
     {
       "id": "task-044",
@@ -1325,7 +1625,13 @@
         "ready": true,
         "completeness": "ready"
       },
-      "updatedAt": "2026-03-28T17:18:51Z"
+      "updatedAt": "2026-03-29T02:48:18Z",
+      "github_required": false,
+      "repo_name": null,
+      "repo_url": null,
+      "repo_status": "not-required",
+      "execution_ready": true,
+      "execution_block_reason": "ready"
     },
     {
       "id": "task-050",
@@ -1352,7 +1658,13 @@
         "ready": false,
         "completeness": "draft"
       },
-      "updatedAt": "2026-03-28T17:18:51Z"
+      "updatedAt": "2026-03-29T02:48:18Z",
+      "github_required": false,
+      "repo_name": null,
+      "repo_url": null,
+      "repo_status": "not-required",
+      "execution_ready": false,
+      "execution_block_reason": "spec-incomplete"
     },
     {
       "id": "task-051",
@@ -1379,7 +1691,13 @@
         "ready": false,
         "completeness": "draft"
       },
-      "updatedAt": "2026-03-28T17:18:51Z"
+      "updatedAt": "2026-03-29T02:48:18Z",
+      "github_required": false,
+      "repo_name": null,
+      "repo_url": null,
+      "repo_status": "not-required",
+      "execution_ready": false,
+      "execution_block_reason": "spec-incomplete"
     },
     {
       "id": "task-052",
@@ -1406,7 +1724,13 @@
         "ready": false,
         "completeness": "draft"
       },
-      "updatedAt": "2026-03-28T17:18:51Z"
+      "updatedAt": "2026-03-29T02:48:18Z",
+      "github_required": false,
+      "repo_name": null,
+      "repo_url": null,
+      "repo_status": "not-required",
+      "execution_ready": false,
+      "execution_block_reason": "spec-incomplete"
     },
     {
       "id": "task-053",
@@ -1433,7 +1757,13 @@
         "ready": false,
         "completeness": "draft"
       },
-      "updatedAt": "2026-03-28T17:18:51Z"
+      "updatedAt": "2026-03-29T02:48:18Z",
+      "github_required": false,
+      "repo_name": null,
+      "repo_url": null,
+      "repo_status": "not-required",
+      "execution_ready": false,
+      "execution_block_reason": "spec-incomplete"
     },
     {
       "id": "task-059",
@@ -1460,7 +1790,13 @@
         "ready": false,
         "completeness": "draft"
       },
-      "updatedAt": "2026-03-28T17:18:51Z"
+      "updatedAt": "2026-03-29T02:48:18Z",
+      "github_required": true,
+      "repo_name": null,
+      "repo_url": null,
+      "repo_status": "missing",
+      "execution_ready": false,
+      "execution_block_reason": "spec-incomplete"
     },
     {
       "id": "task-060",
@@ -1499,14 +1835,20 @@
           "reason": ""
         }
       ],
-      "updatedAt": "2026-03-28T17:18:51Z",
+      "updatedAt": "2026-03-29T02:48:18Z",
       "description": "Product: Plumbing CAD Suite — build, test, and ship LISP + plugin tools to Autodesk App Store",
       "spec": {
         "path": "/Users/openclaw/.openclaw/workspace/task-specs/task-060.md",
         "wordCount": 238,
         "ready": true,
         "completeness": "ready"
-      }
+      },
+      "github_required": true,
+      "repo_name": null,
+      "repo_url": null,
+      "repo_status": "missing",
+      "execution_ready": false,
+      "execution_block_reason": "github-repo-missing"
     },
     {
       "id": "task-061",
@@ -1534,7 +1876,13 @@
         "ready": false,
         "completeness": "draft"
       },
-      "updatedAt": "2026-03-28T17:18:51Z"
+      "updatedAt": "2026-03-29T02:48:18Z",
+      "github_required": false,
+      "repo_name": null,
+      "repo_url": null,
+      "repo_status": "not-required",
+      "execution_ready": false,
+      "execution_block_reason": "spec-incomplete"
     },
     {
       "id": "task-062",
@@ -1562,7 +1910,13 @@
         "ready": false,
         "completeness": "draft"
       },
-      "updatedAt": "2026-03-28T17:18:51Z"
+      "updatedAt": "2026-03-29T02:48:18Z",
+      "github_required": true,
+      "repo_name": null,
+      "repo_url": null,
+      "repo_status": "missing",
+      "execution_ready": false,
+      "execution_block_reason": "spec-incomplete"
     },
     {
       "id": "task-063",
@@ -1590,7 +1944,13 @@
         "ready": true,
         "completeness": "ready"
       },
-      "updatedAt": "2026-03-28T17:18:51Z"
+      "updatedAt": "2026-03-29T02:48:18Z",
+      "github_required": false,
+      "repo_name": null,
+      "repo_url": null,
+      "repo_status": "not-required",
+      "execution_ready": true,
+      "execution_block_reason": "ready"
     },
     {
       "id": "task-064",
@@ -1618,7 +1978,13 @@
         "ready": true,
         "completeness": "ready"
       },
-      "updatedAt": "2026-03-28T17:18:51Z"
+      "updatedAt": "2026-03-29T02:48:18Z",
+      "github_required": false,
+      "repo_name": null,
+      "repo_url": null,
+      "repo_status": "not-required",
+      "execution_ready": true,
+      "execution_block_reason": "ready"
     },
     {
       "id": "task-065",
@@ -1646,7 +2012,13 @@
         "ready": true,
         "completeness": "ready"
       },
-      "updatedAt": "2026-03-28T17:18:51Z"
+      "updatedAt": "2026-03-29T02:48:18Z",
+      "github_required": false,
+      "repo_name": null,
+      "repo_url": null,
+      "repo_status": "not-required",
+      "execution_ready": true,
+      "execution_block_reason": "ready"
     },
     {
       "id": "task-066",
@@ -1674,7 +2046,13 @@
         "ready": false,
         "completeness": "draft"
       },
-      "updatedAt": "2026-03-28T17:18:51Z"
+      "updatedAt": "2026-03-29T02:48:18Z",
+      "github_required": true,
+      "repo_name": null,
+      "repo_url": null,
+      "repo_status": "missing",
+      "execution_ready": false,
+      "execution_block_reason": "spec-incomplete"
     },
     {
       "id": "task-067",
@@ -1701,7 +2079,13 @@
         "ready": true,
         "completeness": "ready"
       },
-      "updatedAt": "2026-03-28T17:18:51Z"
+      "updatedAt": "2026-03-29T02:48:18Z",
+      "github_required": false,
+      "repo_name": null,
+      "repo_url": null,
+      "repo_status": "not-required",
+      "execution_ready": true,
+      "execution_block_reason": "ready"
     },
     {
       "id": "task-068",
@@ -1728,7 +2112,13 @@
         "ready": false,
         "completeness": "draft"
       },
-      "updatedAt": "2026-03-28T17:18:51Z"
+      "updatedAt": "2026-03-29T02:48:18Z",
+      "github_required": false,
+      "repo_name": null,
+      "repo_url": null,
+      "repo_status": "not-required",
+      "execution_ready": false,
+      "execution_block_reason": "spec-incomplete"
     },
     {
       "id": "task-069",
@@ -1772,14 +2162,20 @@
           "reason": "All deliverables verified: 14 transcripts extracted, strategic analysis complete, tracker JSON created"
         }
       ],
-      "updatedAt": "2026-03-28T17:18:51Z",
+      "updatedAt": "2026-03-29T02:48:18Z",
       "description": "",
       "spec": {
         "path": "/Users/openclaw/.openclaw/workspace/task-specs/task-069.md",
         "wordCount": 93,
         "ready": false,
         "completeness": "draft"
-      }
+      },
+      "github_required": false,
+      "repo_name": null,
+      "repo_url": null,
+      "repo_status": "not-required",
+      "execution_ready": false,
+      "execution_block_reason": "spec-incomplete"
     },
     {
       "id": "task-071",
@@ -1807,7 +2203,13 @@
         "ready": false,
         "completeness": "draft"
       },
-      "updatedAt": "2026-03-28T17:18:51Z"
+      "updatedAt": "2026-03-29T02:48:18Z",
+      "github_required": true,
+      "repo_name": null,
+      "repo_url": null,
+      "repo_status": "missing",
+      "execution_ready": false,
+      "execution_block_reason": "spec-incomplete"
     },
     {
       "id": "task-072",
@@ -1834,7 +2236,13 @@
         "ready": true,
         "completeness": "ready"
       },
-      "updatedAt": "2026-03-28T17:18:51Z"
+      "updatedAt": "2026-03-29T02:48:18Z",
+      "github_required": true,
+      "repo_name": null,
+      "repo_url": null,
+      "repo_status": "missing",
+      "execution_ready": false,
+      "execution_block_reason": "github-repo-missing"
     },
     {
       "id": "task-073",
@@ -1862,7 +2270,13 @@
         "ready": true,
         "completeness": "ready"
       },
-      "updatedAt": "2026-03-28T17:18:51Z"
+      "updatedAt": "2026-03-29T02:48:18Z",
+      "github_required": false,
+      "repo_name": null,
+      "repo_url": null,
+      "repo_status": "not-required",
+      "execution_ready": true,
+      "execution_block_reason": "ready"
     },
     {
       "id": "task-074",
@@ -1889,7 +2303,13 @@
         "ready": true,
         "completeness": "ready"
       },
-      "updatedAt": "2026-03-28T17:18:51Z"
+      "updatedAt": "2026-03-29T02:48:18Z",
+      "github_required": false,
+      "repo_name": null,
+      "repo_url": null,
+      "repo_status": "not-required",
+      "execution_ready": true,
+      "execution_block_reason": "ready"
     },
     {
       "id": "task-075",
@@ -1916,7 +2336,13 @@
         "ready": false,
         "completeness": "draft"
       },
-      "updatedAt": "2026-03-28T17:18:51Z"
+      "updatedAt": "2026-03-29T02:48:18Z",
+      "github_required": true,
+      "repo_name": null,
+      "repo_url": null,
+      "repo_status": "missing",
+      "execution_ready": false,
+      "execution_block_reason": "spec-incomplete"
     },
     {
       "id": "task-076",
@@ -1943,7 +2369,13 @@
         "ready": false,
         "completeness": "draft"
       },
-      "updatedAt": "2026-03-28T17:18:51Z"
+      "updatedAt": "2026-03-29T02:48:18Z",
+      "github_required": true,
+      "repo_name": null,
+      "repo_url": null,
+      "repo_status": "missing",
+      "execution_ready": false,
+      "execution_block_reason": "spec-incomplete"
     },
     {
       "id": "task-077",
@@ -1970,7 +2402,13 @@
         "ready": false,
         "completeness": "draft"
       },
-      "updatedAt": "2026-03-28T17:18:51Z"
+      "updatedAt": "2026-03-29T02:48:18Z",
+      "github_required": false,
+      "repo_name": null,
+      "repo_url": null,
+      "repo_status": "not-required",
+      "execution_ready": false,
+      "execution_block_reason": "spec-incomplete"
     },
     {
       "id": "task-078",
@@ -1997,7 +2435,13 @@
         "ready": false,
         "completeness": "draft"
       },
-      "updatedAt": "2026-03-28T17:18:51Z"
+      "updatedAt": "2026-03-29T02:48:18Z",
+      "github_required": false,
+      "repo_name": null,
+      "repo_url": null,
+      "repo_status": "not-required",
+      "execution_ready": false,
+      "execution_block_reason": "spec-incomplete"
     },
     {
       "id": "task-079",
@@ -2021,7 +2465,13 @@
         "ready": true,
         "completeness": "ready"
       },
-      "updatedAt": "2026-03-28T17:18:51Z"
+      "updatedAt": "2026-03-29T02:48:18Z",
+      "github_required": true,
+      "repo_name": null,
+      "repo_url": null,
+      "repo_status": "missing",
+      "execution_ready": false,
+      "execution_block_reason": "github-repo-missing"
     },
     {
       "id": "task-080",
@@ -2042,7 +2492,7 @@
         "phaser",
         "visualization"
       ],
-      "updatedAt": "2026-03-28T17:18:51Z",
+      "updatedAt": "2026-03-29T02:48:18Z",
       "statusHistory": [
         {
           "status": "in-progress",
@@ -2064,7 +2514,13 @@
         "wordCount": 139,
         "ready": false,
         "completeness": "draft"
-      }
+      },
+      "github_required": true,
+      "repo_name": null,
+      "repo_url": null,
+      "repo_status": "missing",
+      "execution_ready": false,
+      "execution_block_reason": "spec-incomplete"
     },
     {
       "id": "task-081",
@@ -2085,7 +2541,7 @@
         "css",
         "visualization"
       ],
-      "updatedAt": "2026-03-28T17:18:51Z",
+      "updatedAt": "2026-03-29T02:48:18Z",
       "statusHistory": [
         {
           "status": "in-progress",
@@ -2107,7 +2563,13 @@
         "wordCount": 133,
         "ready": false,
         "completeness": "draft"
-      }
+      },
+      "github_required": true,
+      "repo_name": null,
+      "repo_url": null,
+      "repo_status": "missing",
+      "execution_ready": false,
+      "execution_block_reason": "spec-incomplete"
     },
     {
       "id": "task-082",
@@ -2128,7 +2590,7 @@
         "hybrid",
         "visualization"
       ],
-      "updatedAt": "2026-03-28T17:18:51Z",
+      "updatedAt": "2026-03-29T02:48:18Z",
       "statusHistory": [
         {
           "status": "in-progress",
@@ -2142,7 +2604,13 @@
         "wordCount": 222,
         "ready": true,
         "completeness": "ready"
-      }
+      },
+      "github_required": true,
+      "repo_name": null,
+      "repo_url": null,
+      "repo_status": "missing",
+      "execution_ready": false,
+      "execution_block_reason": "github-repo-missing"
     },
     {
       "id": "task-083",
@@ -2167,13 +2635,19 @@
         "ready": true,
         "completeness": "ready"
       },
-      "updatedAt": "2026-03-28T17:18:51Z"
+      "updatedAt": "2026-03-29T02:48:18Z",
+      "github_required": true,
+      "repo_name": null,
+      "repo_url": null,
+      "repo_status": "missing",
+      "execution_ready": false,
+      "execution_block_reason": "github-repo-missing"
     },
     {
       "id": "task-084",
       "title": "Dashboard: Full Model Control Panel Page",
       "description": "New dashboard page at public/models.html with full model management UI. Agent cards showing current model + status. Model switching with confirmation. Fallback chain visualization and editing. Provider health indicators. Usage stats if available. Integrated with dashboard navigation.",
-      "status": "pending",
+      "status": "in-progress",
       "priority": "high",
       "assignee": "VECTOR",
       "project": "CrispWave Dashboard",
@@ -2192,7 +2666,21 @@
         "ready": true,
         "completeness": "ready"
       },
-      "updatedAt": "2026-03-28T17:18:51Z"
+      "updatedAt": "2026-03-29T02:48:18Z",
+      "statusHistory": [
+        {
+          "status": "in-progress",
+          "at": "2026-03-28T22:10:04Z",
+          "by": "APEX",
+          "reason": ""
+        }
+      ],
+      "github_required": true,
+      "repo_name": null,
+      "repo_url": null,
+      "repo_status": "missing",
+      "execution_ready": false,
+      "execution_block_reason": "github-repo-missing"
     },
     {
       "id": "task-085",
@@ -2218,7 +2706,13 @@
         "ready": true,
         "completeness": "ready"
       },
-      "updatedAt": "2026-03-28T17:18:51Z"
+      "updatedAt": "2026-03-29T02:48:18Z",
+      "github_required": true,
+      "repo_name": null,
+      "repo_url": null,
+      "repo_status": "missing",
+      "execution_ready": false,
+      "execution_block_reason": "github-repo-missing"
     },
     {
       "id": "task-086",
@@ -2229,7 +2723,7 @@
       "source": "Ronald directive in #apex-opus on 2026-03-28",
       "notes": "Dedicated task for the full CrispWave Dashboard overhaul into an operator cockpit. Scope includes Executive Brief, Needs Ronald blocker queue, Active Agents/Ralph loops, Live Apps & URLs, Critical Alerts, Recent Events timeline, Pipeline momentum, and Model/Provider/Runtime health. This task tracks the overarching overhaul beyond task-083/084/085 point features.",
       "createdAt": "2026-03-28T14:08:48Z",
-      "updatedAt": "2026-03-28T17:18:51Z",
+      "updatedAt": "2026-03-29T02:48:18Z",
       "statusHistory": [
         {
           "status": "pending",
@@ -2243,7 +2737,13 @@
         "wordCount": 289,
         "ready": true,
         "completeness": "ready"
-      }
+      },
+      "github_required": true,
+      "repo_name": null,
+      "repo_url": null,
+      "repo_status": "missing",
+      "execution_ready": false,
+      "execution_block_reason": "github-repo-missing"
     },
     {
       "id": "task-087",
@@ -2254,7 +2754,7 @@
       "source": "apex",
       "notes": "Overhauled. v4 script live. Tested OK 2026-03-28.",
       "createdAt": "2026-03-28T14:16:28Z",
-      "updatedAt": "2026-03-28T17:18:51Z",
+      "updatedAt": "2026-03-29T02:48:18Z",
       "statusHistory": [
         {
           "status": "pending",
@@ -2281,7 +2781,13 @@
         "ready": true,
         "completeness": "ready"
       },
-      "completedAt": "2026-03-28T16:36:23Z"
+      "completedAt": "2026-03-28T16:36:23Z",
+      "github_required": false,
+      "repo_name": null,
+      "repo_url": null,
+      "repo_status": "not-required",
+      "execution_ready": true,
+      "execution_block_reason": "ready"
     },
     {
       "id": "task-088",
@@ -2293,7 +2799,7 @@
       "source": "apex",
       "notes": "",
       "createdAt": "2026-03-28T15:20:28Z",
-      "updatedAt": "2026-03-28T17:18:51Z",
+      "updatedAt": "2026-03-29T02:48:18Z",
       "spec": {
         "path": "/Users/openclaw/.openclaw/workspace/task-specs/task-088.md",
         "ready": true,
@@ -2324,7 +2830,13 @@
           "by": "apex",
           "reason": "Smoke test complete"
         }
-      ]
+      ],
+      "github_required": false,
+      "repo_name": null,
+      "repo_url": null,
+      "repo_status": "not-required",
+      "execution_ready": true,
+      "execution_block_reason": "ready"
     },
     {
       "id": "task-089",
@@ -2344,13 +2856,62 @@
         "ready": true
       },
       "description": "Product: Real Estate Transaction AI Workflow — research and scope automation platform",
-      "updatedAt": "2026-03-28T17:18:51Z"
+      "updatedAt": "2026-03-29T02:48:18Z",
+      "github_required": false,
+      "repo_name": null,
+      "repo_url": null,
+      "repo_status": "not-required",
+      "execution_ready": true,
+      "execution_block_reason": "ready"
+    },
+    {
+      "id": "task-090",
+      "title": "BookForge AI: Full feature QA sweep + OpenAI OAuth image generation migration",
+      "description": "",
+      "status": "pending",
+      "priority": "critical",
+      "assignee": "VECTOR",
+      "source": "Ronald directive in #apex-opus on 2026-03-28",
+      "notes": "Top priority execution track under task-072. Audit all BookForge AI features/functions end-to-end, test real workflows, fix production blockers, and replace/abstract Gemini-dependent image generation with an OAuth OpenAI-compatible path where possible. Deliver Ronald-ready software with documented remaining gaps only if truly unavoidable.",
+      "createdAt": "2026-03-29T01:24:19Z",
+      "updatedAt": "2026-03-29T02:48:18Z",
+      "spec": {
+        "path": "/Users/openclaw/.openclaw/workspace/task-specs/task-090.md",
+        "ready": true,
+        "completeness": "ready",
+        "wordCount": 104
+      },
+      "statusHistory": [
+        {
+          "status": "pending",
+          "at": "2026-03-29T01:24:19Z",
+          "by": "Ronald directive in #apex-opus on 2026-03-28"
+        },
+        {
+          "status": "in-progress",
+          "at": "2026-03-29T01:24:30Z",
+          "by": "apex",
+          "reason": "Execution started; VECTOR assigned as build lead under top-priority BookForge push"
+        },
+        {
+          "status": "pending",
+          "at": "2026-03-29T02:46:54Z",
+          "by": "apex",
+          "reason": ""
+        }
+      ],
+      "github_required": true,
+      "repo_name": null,
+      "repo_url": null,
+      "repo_status": "missing",
+      "execution_ready": false,
+      "execution_block_reason": "github-repo-missing"
     }
   ],
-  "nextTaskId": 81,
+  "nextTaskId": 82,
   "meta": {
-    "version": 3,
-    "lastModified": "2026-03-28T17:18:51Z",
+    "version": 4,
+    "lastModified": "2026-03-29T02:48:18Z",
     "lastModifiedBy": "apex"
   }
 }
