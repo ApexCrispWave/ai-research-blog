@@ -1,0 +1,262 @@
+{
+  "date": "2026-03-31",
+  "generated_at": "2026-03-31T13:35:27Z",
+  "sources": {
+    "hacker_news": [
+  {
+    "title": "Ollama is now powered by MLX on Apple Silicon in preview",
+    "url": "https://ollama.com/blog/mlx",
+    "score": 404,
+    "by": "redundantly",
+    "source": "hacker_news"
+  },
+  {
+    "title": "Claude Code's source code has been leaked via a map file in their NPM registry",
+    "url": "https://twitter.com/Fried_rice/status/2038894956459290963",
+    "score": 607,
+    "by": "treexs",
+    "source": "hacker_news"
+  },
+  {
+    "title": "Google's 200M-parameter time-series foundation model with 16k context",
+    "url": "https://github.com/google-research/timesfm",
+    "score": 186,
+    "by": "codepawl",
+    "source": "hacker_news"
+  },
+  {
+    "title": "Universal Claude.md – cut Claude output tokens",
+    "url": "https://github.com/drona23/claude-token-efficient",
+    "score": 365,
+    "by": "killme2008",
+    "source": "hacker_news"
+  },
+  {
+    "title": "7,655 Ransomware Claims in One Year: Group, Sector, and Country Breakdown",
+    "url": "https://ciphercue.com/blog/7655-ransomware-claims-march-2025-to-march-2026",
+    "score": 34,
+    "by": "adulion",
+    "source": "hacker_news"
+  },
+  {
+    "title": "Anthropic: Claude Code users hitting usage limits 'way faster than expected'",
+    "url": "https://www.theregister.com/2026/03/31/anthropic_claude_code_limits/",
+    "score": 38,
+    "by": "samizdis",
+    "source": "hacker_news"
+  },
+  {
+    "title": "Clojure: The Documentary, official trailer [video]",
+    "url": "https://www.youtube.com/watch?v=JJEyffSdBsk",
+    "score": 260,
+    "by": "fogus",
+    "source": "hacker_news"
+  },
+  {
+    "title": "RamAIn (YC W26) Is Hiring",
+    "url": "https://www.ycombinator.com/companies/ramain/jobs/jezgwo5-ai-ml-research-engineer",
+    "score": 1,
+    "by": "svee",
+    "source": "hacker_news"
+  },
+  {
+    "title": "Bird brains (2023)",
+    "url": "https://www.dhanishsemar.com/writing/bird-brains",
+    "score": 328,
+    "by": "DiffTheEnder",
+    "source": "hacker_news"
+  },
+  {
+    "title": "Mr. Chatterbox is a Victorian-era ethically trained model",
+    "url": "https://simonwillison.net/2026/Mar/30/mr-chatterbox/",
+    "score": 66,
+    "by": "y1n0",
+    "source": "hacker_news"
+  }
+],
+    "youtube": [
+  {
+    "channel": "MattVidPro",
+    "title": "Suno v5.5 is ALIVE! VS Google Lyria 3 & Sonauto",
+    "source": "youtube"
+  },
+  {
+    "channel": "MattVidPro",
+    "title": "Everyone in AI Is Making Moves Right Now! [AI ROUNDUP]",
+    "source": "youtube"
+  },
+  {
+    "channel": "MattVidPro",
+    "title": "OpenAI is killing Sora, The real reason? Compute, Money, and Focus.",
+    "source": "youtube"
+  },
+  {
+    "channel": "MattVidPro",
+    "title": "AI just got Elephant Memory - Hands on with the Wildest AI Updates",
+    "source": "youtube"
+  },
+  {
+    "channel": "MattVidPro",
+    "title": "Google Quietly Made AI Building Way Easier",
+    "source": "youtube"
+  },
+  {
+    "channel": "TwoMinutePapers",
+    "title": "DeepMind’s New AI Just Changed Science Forever",
+    "source": "youtube"
+  },
+  {
+    "channel": "TwoMinutePapers",
+    "title": "The Algorithm That Made Me Cry",
+    "source": "youtube"
+  },
+  {
+    "channel": "TwoMinutePapers",
+    "title": "DeepSeek Just Fixed One Of The Biggest Problems With AI",
+    "source": "youtube"
+  },
+  {
+    "channel": "TwoMinutePapers",
+    "title": "This Physics Breakthrough Looks Impossible",
+    "source": "youtube"
+  },
+  {
+    "channel": "TwoMinutePapers",
+    "title": "NVIDIA’s New AI Just Cracked The Hardest Part Of Self Driving",
+    "source": "youtube"
+  },
+  {
+    "channel": "AIExplained",
+    "title": "Two AI Models Set to “stir government urgency”, But Will This Challenge Undo Them?",
+    "source": "youtube"
+  },
+  {
+    "channel": "AIExplained",
+    "title": "What the New ChatGPT 5.4 Means for the World",
+    "source": "youtube"
+  },
+  {
+    "channel": "AIExplained",
+    "title": "Deadline Day for Autonomous AI Weapons & Mass Surveillance",
+    "source": "youtube"
+  },
+  {
+    "channel": "AIExplained",
+    "title": "Gemini 3.1 Pro and the Downfall of Benchmarks: Welcome to the Vibe Era of AI",
+    "source": "youtube"
+  },
+  {
+    "channel": "AIExplained",
+    "title": "The Two Best AI Models/Enemies Just Got Released Simultaneously",
+    "source": "youtube"
+  },
+  {
+    "channel": "bycloud",
+    "title": "Como mata la insanity esta -By Cloud",
+    "source": "youtube"
+  },
+  {
+    "channel": "bycloud",
+    "title": "Partidaza en call of duty advance warfare live 2.0 -By Cloud",
+    "source": "youtube"
+  },
+  {
+    "channel": "bycloud",
+    "title": "Trailer de black ops 3 mi reaccion -By Cloud",
+    "source": "youtube"
+  },
+  {
+    "channel": "bycloud",
+    "title": "Informacion de Call of duty black ops 3 y tips para tener mejor punteria en call of duty AW",
+    "source": "youtube"
+  },
+  {
+    "channel": "bycloud",
+    "title": "Jugando con la Bal 27- By Cloud",
+    "source": "youtube"
+  }
+],
+    "github_trending": [
+  {
+    "name": "Significant-Gravitas/AutoGPT",
+    "description": "AutoGPT is the vision of accessible AI for everyone, to use and to build on. Our mission is to provide the tools, so that you can focus on what matters.",
+    "stars": 182993,
+    "url": "https://github.com/Significant-Gravitas/AutoGPT",
+    "source": "github_trending"
+  },
+  {
+    "name": "f/prompts.chat",
+    "description": "f.k.a. Awesome ChatGPT Prompts. Share, discover, and collect prompts from the community. Free and open source — self-host for your organization with complete privacy.",
+    "stars": 155191,
+    "url": "https://github.com/f/prompts.chat",
+    "source": "github_trending"
+  },
+  {
+    "name": "rasbt/LLMs-from-scratch",
+    "description": "Implement a ChatGPT-like LLM in PyTorch from scratch, step by step",
+    "stars": 89614,
+    "url": "https://github.com/rasbt/LLMs-from-scratch",
+    "source": "github_trending"
+  },
+  {
+    "name": "hacksider/Deep-Live-Cam",
+    "description": "real time face swap and one-click video deepfake with only a single image",
+    "stars": 86854,
+    "url": "https://github.com/hacksider/Deep-Live-Cam",
+    "source": "github_trending"
+  },
+  {
+    "name": "OpenHands/OpenHands",
+    "description": "🙌 OpenHands: AI-Driven Development",
+    "stars": 70286,
+    "url": "https://github.com/OpenHands/OpenHands",
+    "source": "github_trending"
+  },
+  {
+    "name": "FlowiseAI/Flowise",
+    "description": "Build AI Agents, Visually",
+    "stars": 51291,
+    "url": "https://github.com/FlowiseAI/Flowise",
+    "source": "github_trending"
+  },
+  {
+    "name": "jingyaogong/minimind",
+    "description": "🚀🚀 「大模型」2小时完全从0训练64M的小参数GPT！🌏 Train a 64M-parameter GPT from scratch in just 2h!",
+    "stars": 45024,
+    "url": "https://github.com/jingyaogong/minimind",
+    "source": "github_trending"
+  },
+  {
+    "name": "thedotmack/claude-mem",
+    "description": "A Claude Code plugin that automatically captures everything Claude does during your coding sessions, compresses it with AI (using Claude's agent-sdk), and injects relevant context back into future sessions.",
+    "stars": 43899,
+    "url": "https://github.com/thedotmack/claude-mem",
+    "source": "github_trending"
+  },
+  {
+    "name": "Kong/kong",
+    "description": "🦍 The API and AI Gateway",
+    "stars": 43078,
+    "url": "https://github.com/Kong/kong",
+    "source": "github_trending"
+  },
+  {
+    "name": "ItzCrazyKns/Vane",
+    "description": "Vane is an AI-powered answering engine.",
+    "stars": 33513,
+    "url": "https://github.com/ItzCrazyKns/Vane",
+    "source": "github_trending"
+  }
+]
+  },
+  "counts": {
+    "hacker_news": 10,
+    "youtube": 20,
+    "github_trending": 10
+  },
+  "synthesis": {
+    "key_themes": ,
+    "blog_angle": "",
+    "top_story": ""
+  }
+}
