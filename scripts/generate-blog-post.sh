@@ -52,7 +52,7 @@ DRAFT_FILE="$DRAFTS_DIR/draft-$TODAY.md"
 # ── Generate with qwen3.5:9b ──────────────────────────────────────────────────
 log "  Calling qwen3.5:9b for content generation..."
 
-PROMPT="Write a comprehensive, SEO-optimized 2000-word blog post for AI developers and tech enthusiasts.
+PROMPT="Write a 2000-word blog post that's technical, opinionated, beginner-friendly, and fun to read. News digest style.
 
 BLOG ANGLE: $BLOG_ANGLE
 TOP STORY: $TOP_STORY
@@ -64,14 +64,26 @@ TRENDING HACKER NEWS STORIES TODAY:
 TRENDING AI YOUTUBE VIDEOS TODAY:
 - $YT_TITLES
 
+VOICE & TONE:
+• Technical + opinionated (have a POV, don't be neutral)
+• Beginner-friendly (explain jargon, no gatekeeping)
+• News digest style (what's hot right now, why it matters)
+• Fun to read (conversational, wit where appropriate, avoid corporate speak)
+
+CONTENT FOCUS (pick 1-2 per post):
+- AI/ML research trends and breakthroughs
+- Local LLM optimization (running models faster, cheaper)
+- OpenClaw automation and open source optimizations
+- How to hire an AI employee (tools, workflows, costs)
+
 REQUIREMENTS:
-1. SEO-optimized title that includes the year 2026
-2. Strong hook: why this matters RIGHT NOW
-3. 5-6 substantive sections with ## headers
-4. Real code examples and practical commands where relevant
-5. Technical but accessible tone — developers who want to build things
-6. Each section at minimum 200 words
-7. End with CTA: 'Ready to build your own AI pipeline? Get the AI Automation Starter Kit at crispwave.gumroad.com — pre-configured scripts, templates, and guides. Zero cloud cost. Runs overnight.'
+1. SEO title that includes 2026 or a timely angle
+2. Strong hook in first paragraph: Why this matters RIGHT NOW
+3. 5-7 sections with ## headers
+4. Real code examples, commands, or workflows where relevant
+5. Direct, punchy language—no fluff
+6. Each section 150-300 words
+7. End with CTA: 'Ready to build? Get the AI Automation Starter Kit at crispwave.gumroad.com — scripts, templates, zero cloud cost.'
 
 OUTPUT FORMAT (markdown with Jekyll frontmatter):
 ---

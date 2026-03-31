@@ -1,25 +1,25 @@
 ---
 layout: home
-title: AI Research & Blog
+title: AI Research & Trends
 ---
 
-# AI Research Blog
+# AI Research & Trends
 
-Deep dives into AI trends, tools, and opportunities. Updated regularly.
+Technical, opinionated takes on AI research, local LLM optimization, and autonomous systems. News digest style—fun to read.
+
+**Focus:** AI/ML trends, local model optimization, OpenClaw automation, hiring AI employees.
 
 ---
 
 ## Latest Posts
 
-{% for post in site.posts limit:10 %}
-- **[{{ post.title }}]({{ post.url }})** — {{ post.date | date: "%B %d, %Y" }}
+{% for post in site.posts limit:12 %}
+- **[{{ post.title }}]({{ post.url }})** — {{ post.date | date: "%b %d, %Y" }}
 {% endfor %}
 
 ---
 
-## About
+## Subscribe
 
-We research emerging AI tools, trends, and opportunities. This blog shares our findings and insights for builders, founders, and AI enthusiasts.
-
-**Subscribe:** [RSS Feed](/feed.xml)  
-**GitHub:** [ApexCrispWave/ai-research-blog](https://github.com/ApexCrispWave/ai-research-blog)
+- **RSS:** [/feed.xml](/feed.xml)
+- **GitHub:** [ApexCrispWave/ai-research-blog](https://github.com/ApexCrispWave/ai-research-blog)
