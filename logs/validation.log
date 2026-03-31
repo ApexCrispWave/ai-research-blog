@@ -1,0 +1,28 @@
+[2026-03-30 22:26:02] 🔍 Post Validation Started
+📊 Found        1 posts to validate
+
+Validating: 2026-03-30-local-llm-productivity.md
+  ⚠️  Below target:     1653 words (target: 1800+)
+  ℹ️  Status: DRAFT (will not be published)
+  📌 Title: title: Understanding Null in AI & Computing - A Deep Dive into Absence & Meaning
+  ⚠️  Contains 'null' - verify generated content
+  ✅ Validation passed
+
+📋 Validation Summary
+  Valid posts: 0
+  Issues found: 0
+✅ All posts validated successfully
+[2026-03-30 22:26:04] 🔍 Post Validation Started
+📊 Found        1 posts to validate
+
+Validating: 2026-03-30-local-llm-productivity.md
+  ⚠️  Below target:     1653 words (target: 1800+)
+  ℹ️  Status: DRAFT (will not be published)
+  📌 Title: title: Understanding Null in AI & Computing - A Deep Dive into Absence & Meaning
+  ⚠️  Contains 'null' - verify generated content
+  ✅ Validation passed
+
+📋 Validation Summary
+  Valid posts: 0
+  Issues found: 0
+✅ All posts validated successfully

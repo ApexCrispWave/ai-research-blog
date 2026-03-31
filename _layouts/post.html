@@ -1,0 +1,72 @@
+---
+layout: default
+---
+
+<article class="post">
+  <header class="post-header">
+    <h1 class="post-title">{{ page.title }}</h1>
+    <p class="post-meta">
+      <time datetime="{{ page.date | date_to_xmlschema }}">{{ page.date | date: "%B %d, %Y" }}</time>
+      {% if page.author %}
+        • <span class="author">{{ page.author }}</span>
+      {% endif %}
+    </p>
+    {% if page.tags %}
+      <p class="post-tags">
+        {% for tag in page.tags %}
+          <span class="tag">#{{ tag }}</span>
+        {% endfor %}
+      </p>
+    {% endif %}
+  </header>
+
+  <div class="post-content">
+    {{ content }}
+  </div>
+
+  {% if page.cta %}
+    <div class="post-cta">
+      <hr>
+      <p><strong>{{ page.cta.title }}</strong></p>
+      <p>{{ page.cta.text }}</p>
+      <p>
+        <a href="{{ page.cta.link }}" class="btn btn-primary" target="_blank">
+          {{ page.cta.button_text }}
+        </a>
+      </p>
+    </div>
+  {% endif %}
+
+  <footer class="post-footer">
+    <hr>
+    <p class="post-footer-text">
+      <strong>About This Post:</strong><br>
+      Word count: {{ page.content | number_of_words }}<br>
+      Reading time: ~{{ page.content | number_of_words | divided_by: 200 }} min<br>
+      {% if page.category %}Category: {{ page.category }}{% endif %}
+    </p>
+  </footer>
+</article>
+
+<style>
+  .post-tags { margin-top: 10px; }
+  .tag { 
+    display: inline-block; 
+    background: #f0f0f0; 
+    padding: 2px 8px; 
+    border-radius: 3px; 
+    margin-right: 5px;
+    font-size: 0.9em;
+  }
+  .post-cta {
+    background: #f9f9f9;
+    border-left: 4px solid #007acc;
+    padding: 15px;
+    margin: 30px 0;
+    border-radius: 4px;
+  }
+  .post-footer {
+    color: #999;
+    font-size: 0.9em;
+  }
+</style>
