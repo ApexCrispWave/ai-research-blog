@@ -1,153 +1,132 @@
 #!/bin/bash
-# generate-blog-post.sh - Create a blog post from research JSON using qwen3.5:9b
-# Usage: ./scripts/generate-blog-post.sh [research_date]
+# generate-blog-post.sh — Generate 2000-word blog post from research JSON
+# Usage: ./scripts/generate-blog-post.sh [--date YYYY-MM-DD] [--research path/to/research.json]
+# Output: _posts/YYYY-MM-DD-slug.md + posts/draft-YYYY-MM-DD.md
 
-set -e
+set -uo pipefail
 
-SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
-REPO_ROOT="$(dirname "$SCRIPT_DIR")"
-POSTS_DIR="$REPO_ROOT/posts"
-RESEARCH_DIR="$REPO_ROOT/research"
-LOG_FILE="$REPO_ROOT/logs/blog-generation.log"
+PROJECT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
+POSTS_DIR="$PROJECT_DIR/_posts"
+DRAFTS_DIR="$PROJECT_DIR/posts"
+LOG_DIR="$PROJECT_DIR/logs"
+TODAY="${2:-$(date +%Y-%m-%d)}"
+RESEARCH_FILE="${4:-$PROJECT_DIR/research/daily/$TODAY.json}"
 
-# Ensure directories exist
-mkdir -p "$POSTS_DIR" "$REPO_ROOT/logs"
+mkdir -p "$POSTS_DIR" "$DRAFTS_DIR" "$LOG_DIR"
 
-# Parse arguments
-RESEARCH_DATE="${1:-2026-03-30}"
+log() { echo "[$(date '+%H:%M:%S')] $*" | tee -a "$LOG_DIR/blog-generator.log"; }
 
-echo "[$(date +'%Y-%m-%d %H:%M:%S')] 🚀 Blog Post Generator Started" | tee -a "$LOG_FILE"
-echo "[$(date +'%Y-%m-%d %H:%M:%S')] Research Date: $RESEARCH_DATE" | tee -a "$LOG_FILE"
+log "✍️  Blog Generator — $TODAY"
 
-# Read research data
-RESEARCH_JSON="$RESEARCH_DIR/research-$RESEARCH_DATE.json"
-if [ ! -f "$RESEARCH_JSON" ]; then
-  echo "[$(date +'%Y-%m-%d %H:%M:%S')] ⚠️  Research file not found: $RESEARCH_JSON" | tee -a "$LOG_FILE"
-  echo "[$(date +'%Y-%m-%d %H:%M:%S')] Creating placeholder research data..." | tee -a "$LOG_FILE"
-  
-  mkdir -p "$RESEARCH_DIR"
-  bash "$SCRIPT_DIR/aggregate-research.sh" "$RESEARCH_DATE" >> "$LOG_FILE" 2>&1
+# Check research file
+if [ ! -f "$RESEARCH_FILE" ]; then
+  log "  ⚠️  Research file not found: $RESEARCH_FILE"
+  log "  Running research aggregator first..."
+  bash "$PROJECT_DIR/scripts/research-aggregator.sh" || true
 fi
 
-echo "[$(date +'%Y-%m-%d %H:%M:%S')] 📖 Reading research data..." | tee -a "$LOG_FILE"
-RESEARCH_CONTENT=$(cat "$RESEARCH_JSON" 2>/dev/null || echo "{}")
+# Load research data
+RESEARCH=$(cat "$RESEARCH_FILE" 2>/dev/null || echo '{}')
+BLOG_ANGLE=$(echo "$RESEARCH" | jq -r '.synthesis.blog_angle // "AI automation trends"')
+TOP_STORY=$(echo "$RESEARCH" | jq -r '.synthesis.top_story // "Local AI advances"')
+KEY_THEMES=$(echo "$RESEARCH" | jq -r '.synthesis.key_themes | join(", ")' 2>/dev/null || echo "AI, automation, local LLMs")
+HN_TITLES=$(echo "$RESEARCH" | jq -r '.sources.hacker_news[0:5] | map(.title) | join("\n- ")' 2>/dev/null || echo "")
+YT_TITLES=$(echo "$RESEARCH" | jq -r '.sources.youtube[0:5] | map(.channel + ": " + .title) | join("\n- ")' 2>/dev/null || echo "")
 
-# Create blog post prompt
-BLOG_PROMPT="You are an expert AI blogger. Based on the following research data about AI trends, write a comprehensive blog post (1800-2200 words).
+log "  Blog angle: $BLOG_ANGLE"
+log "  Top story: $TOP_STORY"
 
-RESEARCH DATA:
-$RESEARCH_CONTENT
+# ── Generate slug ─────────────────────────────────────────────────────────────
+SLUG=$(echo "$BLOG_ANGLE" | tr '[:upper:]' '[:lower:]' | \
+  sed 's/[^a-z0-9 ]//g' | \
+  tr ' ' '-' | \
+  sed 's/--*/-/g' | \
+  cut -c1-50 | \
+  sed 's/-$//')
+[ -z "$SLUG" ] && SLUG="ai-research-roundup"
+SLUG="$TODAY-$SLUG"
+
+OUTPUT_FILE="$POSTS_DIR/$SLUG.md"
+DRAFT_FILE="$DRAFTS_DIR/draft-$TODAY.md"
+
+# ── Generate with qwen3.5:9b ──────────────────────────────────────────────────
+log "  Calling qwen3.5:9b for content generation..."
+
+PROMPT="Write a comprehensive, SEO-optimized 2000-word blog post for AI developers and tech enthusiasts.
+
+BLOG ANGLE: $BLOG_ANGLE
+TOP STORY: $TOP_STORY
+KEY THEMES: $KEY_THEMES
+
+TRENDING HACKER NEWS STORIES TODAY:
+- $HN_TITLES
+
+TRENDING AI YOUTUBE VIDEOS TODAY:
+- $YT_TITLES
 
 REQUIREMENTS:
-1. Write 1800-2200 words
-2. Include insights from multiple sources (YouTube, market trends, competitive analysis)
-3. Use markdown formatting with clear headers
-4. Include 3-5 actionable takeaways
-5. Add an engaging call-to-action related to AI resources/Gumroad
-6. Use bullet points for key information
-7. Make it accessible to technical and non-technical readers
-8. Include specific examples
+1. SEO-optimized title that includes the year 2026
+2. Strong hook: why this matters RIGHT NOW
+3. 5-6 substantive sections with ## headers
+4. Real code examples and practical commands where relevant
+5. Technical but accessible tone — developers who want to build things
+6. Each section at minimum 200 words
+7. End with CTA: 'Ready to build your own AI pipeline? Get the AI Automation Starter Kit at crispwave.gumroad.com — pre-configured scripts, templates, and guides. Zero cloud cost. Runs overnight.'
 
-STRUCTURE:
-# Main Title (Catchy, about AI trends)
-
-## Introduction
-[Hook the reader with a compelling stat or question]
-
-## Key Trends
-[2-3 paragraphs about main trends]
-
-## Actionable Insights
-- Insight 1
-- Insight 2
-- Insight 3
-
-## Conclusion
-[Wrap up with forward-looking statement]
-
-## Call to Action
-[Suggest newsletter signup or resource]
-
-Write the full blog post now:"
-
-echo "[$(date +'%Y-%m-%d %H:%M:%S')] 🤖 Generating blog post with qwen3.5:9b..." | tee -a "$LOG_FILE"
-
-# Call qwen3.5:9b
-GENERATED_POST=$(timeout 120 ollama run qwen3.5:9b "$BLOG_PROMPT" 2>/dev/null | head -4000)
-
-if [ -z "$GENERATED_POST" ]; then
-  echo "[$(date +'%Y-%m-%d %H:%M:%S')] ❌ Failed to generate blog post" | tee -a "$LOG_FILE"
-  
-  # Create fallback post
-  GENERATED_POST="# The Future of AI: Trends and Opportunities for $RESEARCH_DATE
-
-## Introduction
-The AI landscape is rapidly evolving with new developments in open-source models, efficient inference, and practical applications. This post explores the latest trends shaping the industry.
-
-## Key Trends
-
-### 1. Local and Efficient Models
-Open-source models are becoming competitive with proprietary APIs. Tools like Qwen, Mistral, and Llama are enabling developers to run powerful AI locally without cloud dependencies.
-
-### 2. Retrieval-Augmented Generation (RAG)
-RAG frameworks are becoming standard for integrating external knowledge with language models, enabling more accurate and contextual responses.
-
-### 3. Fine-tuning at Scale
-More accessible fine-tuning tools allow businesses to customize models for specific use cases without extensive ML expertise.
-
-## Actionable Insights
-- **Adopt local models** for privacy and cost savings
-- **Implement RAG** to improve answer accuracy
-- **Fine-tune strategically** for domain-specific needs
-- **Monitor efficiency** metrics alongside accuracy
-
-## Conclusion
-The democratization of AI is here. Teams can now build powerful, custom AI systems with local models and open-source tools.
-
-## Join Our Community
-Stay updated on the latest AI trends and practical insights. Follow us for weekly updates on tools, techniques, and opportunities in AI."
-fi
-
-# Extract title
-TITLE="Local Open-Source AI: Practical Trends and Opportunities"
-if echo "$GENERATED_POST" | head -1 | grep -q "^#"; then
-  TITLE=$(echo "$GENERATED_POST" | head -1 | sed 's/^# *//')
-fi
-
-# Create slug
-SLUG=$(echo "$TITLE" | tr '[:upper:]' '[:lower:]' | sed 's/[^a-z0-9 ]//g' | sed 's/ /-/g' | cut -c1-50)
-
-# Create post file
-POST_FILE="$POSTS_DIR/${RESEARCH_DATE}-${SLUG}.md"
-
-echo "[$(date +'%Y-%m-%d %H:%M:%S')] 📝 Creating post: $POST_FILE" | tee -a "$LOG_FILE"
-
-cat > "$POST_FILE" << FRONTMATTER
+OUTPUT FORMAT (markdown with Jekyll frontmatter):
 ---
-title: "$TITLE"
-date: $RESEARCH_DATE
-slug: $SLUG
-category: AI & Technology
-tags: [ai, research, trends, automation]
+title: \"[SEO title here]\"
+date: $TODAY
+slug: $(echo "$BLOG_ANGLE" | tr '[:upper:]' '[:lower:]' | sed 's/[^a-z0-9 ]//g' | tr ' ' '-' | cut -c1-40)
+tags: [ai, automation, local-llm]
+description: \"[150-char SEO description]\"
+reading_time: 10
+word_count: 2000
 author: APEX
-status: draft
 ---
 
-$GENERATED_POST
-FRONTMATTER
+[Full 2000-word article body]"
 
-WORD_COUNT=$(echo "$GENERATED_POST" | wc -w)
-echo "[$(date +'%Y-%m-%d %H:%M:%S')] ✅ Blog post generated" | tee -a "$LOG_FILE"
-echo "[$(date +'%Y-%m-%d %H:%M:%S')] 📊 Words: $WORD_COUNT, Slug: $SLUG" | tee -a "$LOG_FILE"
-echo "[$(date +'%Y-%m-%d %H:%M:%S')] ✨ Status: DRAFT - Ready for review" | tee -a "$LOG_FILE"
+CONTENT=$(curl -sf http://127.0.0.1:11434/api/generate \
+  --data "{\"model\":\"qwen3.5:9b\",\"prompt\":$(echo "$PROMPT" | jq -Rs .),\"stream\":false,\"options\":{\"num_predict\":5000,\"temperature\":0.7}}" \
+  2>/dev/null | jq -r '.response' || echo "")
 
-# Log metadata
-echo "{\"date\": \"$(date -u +%Y-%m-%dT%H:%M:%SZ)\", \"post\": \"$POST_FILE\", \"words\": $WORD_COUNT, \"status\": \"draft\"}" >> "$REPO_ROOT/logs/post-generation.json"
+if [ -z "$CONTENT" ]; then
+  log "  ❌ Generation failed — model not responding"
+  exit 1
+fi
 
-echo ""
-echo "✅ Blog post created: $POST_FILE"
-echo "📊 Word count: $WORD_COUNT"
-echo ""
-echo "Next: Review the post, then run:"
-echo "  git add $POST_FILE"
-echo "  bash $SCRIPT_DIR/publish-blog-post.sh $POST_FILE"
+WORD_COUNT=$(echo "$CONTENT" | wc -w)
+log "  Generated $WORD_COUNT words"
+
+# If too short, try to expand
+if [ "$WORD_COUNT" -lt 800 ]; then
+  log "  ⚠️  Content too short, expanding..."
+  EXPAND_PROMPT="Expand this article to 2000 words. Keep all sections but add more detail, examples, and code. Here is the article: $CONTENT"
+  CONTENT=$(curl -sf http://127.0.0.1:11434/api/generate \
+    --data "{\"model\":\"qwen3.5:9b\",\"prompt\":$(echo "$EXPAND_PROMPT" | jq -Rs .),\"stream\":false,\"options\":{\"num_predict\":4000,\"temperature\":0.7}}" \
+    2>/dev/null | jq -r '.response' || echo "$CONTENT")
+  WORD_COUNT=$(echo "$CONTENT" | wc -w)
+  log "  Expanded to $WORD_COUNT words"
+fi
+
+# ── Write output files ────────────────────────────────────────────────────────
+echo "$CONTENT" > "$OUTPUT_FILE"
+echo "$CONTENT" > "$DRAFT_FILE"
+
+# ── Update metrics log ────────────────────────────────────────────────────────
+METRICS_FILE="$LOG_DIR/metrics.json"
+if [ ! -f "$METRICS_FILE" ]; then
+  echo '{"posts":[]}' > "$METRICS_FILE"
+fi
+
+READING_TIME=$(( WORD_COUNT / 200 ))
+NEW_ENTRY="{\"date\":\"$TODAY\",\"file\":\"$OUTPUT_FILE\",\"slug\":\"$SLUG\",\"word_count\":$WORD_COUNT,\"reading_time\":${READING_TIME}m,\"generated_at\":\"$(date -u +%Y-%m-%dT%H:%M:%SZ)\"}"
+TMP=$(jq --argjson entry "$NEW_ENTRY" '.posts += [$entry]' "$METRICS_FILE" 2>/dev/null)
+[ -n "$TMP" ] && echo "$TMP" > "$METRICS_FILE"
+
+log "✅ Blog post generated"
+log "   File: $OUTPUT_FILE"
+log "   Draft: $DRAFT_FILE"
+log "   Words: $WORD_COUNT | Reading time: ~${READING_TIME} min"
+echo "$OUTPUT_FILE"
