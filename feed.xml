@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0">
+  <channel>
+    <title>AI Research Blog</title>
+    <link>https://example.com/ai-research-blog</link>
+    <description>Daily AI Research and Trends</description>
+    <language>en-us</language>
+    <item>
+      <title>AI Research Trends Q1 2026</title>
+      <link>https://example.com/posts/2026-03-30-ai-research-trends-q1-2026.md</link>
+      <pubDate>2026-03-30</pubDate>
+      <category>Research</category>
+      <description>Large Language Models (LLMs) have become the cornerstone of modern AI development. 
+
+The latest research shows significant advances in model efficiency, with smaller models achieving comparable perfor</description>
+    </item>
+  </channel>
+</rss>

@@ -1,0 +1,38 @@
+# Research aggregation logs
+logs/
+*.log
+
+# Draft posts
+drafts/
+
+# Local development
+.env
+.DS_Store
+*.pyc
+__pycache__/
+.venv/
+venv/
+
+# Build artifacts
+dist/
+build/
+*.egg-info/
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Temp files
+*.tmp
+*~
+
+# Node modules (if using any JS)
+node_modules/
+
+# Research cache
+.research-cache/
+
+# GitHub Pages build
+_site/
