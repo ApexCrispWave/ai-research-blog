@@ -1,31 +1,161 @@
 {
   "date": "2026-03-30",
+  "generated_at": "2026-03-31T06:00:36Z",
   "sources": {
     "hacker_news": [
-      {"title": "Universal Claude.md – cut Claude output tokens", "url": "https://github.com/drona23/claude-token-efficient", "score": 212, "category": "efficiency"},
-      {"title": "Ollama is now powered by MLX on Apple Silicon in preview", "url": "https://news.ycombinator.com", "score": 180, "category": "local-llm"},
-      {"title": "Semantic – Reducing LLM Agent Loops by 27.78% via AST Logic Graphs", "url": "https://github.com/concensure/Semantic", "score": 30, "category": "agents"},
-      {"title": "Do your own writing (debate on AI writing)", "url": "https://alexhwoods.com/dont-let-ai-write-for-you/", "score": 445, "category": "debate"}
-    ],
-    "youtube": [
-      {"channel": "MattVidPro", "title": "Everyone in AI Is Making Moves Right Now! [AI ROUNDUP]", "topic": "ai-news"},
-      {"channel": "MattVidPro", "title": "Google Quietly Made AI Building Way Easier", "topic": "google-ai"},
-      {"channel": "TwoMinutePapers", "title": "DeepMind New AI Just Changed Science Forever", "topic": "research"},
-      {"channel": "TwoMinutePapers", "title": "DeepSeek Just Fixed One Of The Biggest Problems With AI", "topic": "deepseek"}
-    ],
-    "product_hunt": [
-      {"name": "Local AI tools", "trend": "AI running locally gaining traction vs cloud"},
-      {"name": "Agentic frameworks", "trend": "Agent orchestration tools surging in popularity"}
-    ]
+  {
+    "title": "Ollama is now powered by MLX on Apple Silicon in preview",
+    "url": "https://ollama.com/blog/mlx",
+    "score": 96,
+    "by": "redundantly",
+    "source": "hacker_news"
   },
-  "key_themes": [
-    "Ollama MLX on Apple Silicon — massive local LLM performance boost",
-    "Claude token efficiency becoming critical for production cost control",
-    "LLM agent loops being optimized via AST/logic graphs",
-    "Human vs AI writing debate intensifying",
-    "DeepSeek continues solving fundamental AI limitations",
-    "Google making AI development more accessible"
-  ],
-  "blog_angle": "The Ollama MLX breakthrough + Claude token efficiency = practical guide for running AI locally at near-zero cost",
-  "generated_at": "2026-03-30T22:20:00"
+  {
+    "title": "Google's 200M-parameter time-series foundation model with 16k context",
+    "url": "https://github.com/google-research/timesfm",
+    "score": 23,
+    "by": "codepawl",
+    "source": "hacker_news"
+  },
+  {
+    "title": "Universal Claude.md – cut Claude output tokens",
+    "url": "https://github.com/drona23/claude-token-efficient",
+    "score": 231,
+    "by": "killme2008",
+    "source": "hacker_news"
+  },
+  {
+    "title": "Clojure: The Documentary, official trailer [video]",
+    "url": "https://www.youtube.com/watch?v=JJEyffSdBsk",
+    "score": 114,
+    "by": "fogus",
+    "source": "hacker_news"
+  },
+  {
+    "title": "Show HN: Raincast – Describe an app, get a native desktop app (open source)",
+    "url": "https://github.com/tihiera/raincast",
+    "score": 3,
+    "by": "tito777",
+    "source": "hacker_news"
+  },
+  {
+    "title": "Mr. Chatterbox is a Victorian-era ethically trained model",
+    "url": "https://simonwillison.net/2026/Mar/30/mr-chatterbox/",
+    "score": 20,
+    "by": "y1n0",
+    "source": "hacker_news"
+  },
+  {
+    "title": "Show HN: I turned a sketch into a 3D-print pegboard for my kid with an AI agent",
+    "url": "https://github.com/virpo/pegboard",
+    "score": 29,
+    "by": "virpo",
+    "source": "hacker_news"
+  },
+  {
+    "title": "Bird brains (2023)",
+    "url": "https://www.dhanishsemar.com/writing/bird-brains",
+    "score": 309,
+    "by": "DiffTheEnder",
+    "source": "hacker_news"
+  },
+  {
+    "title": "Agents of Chaos",
+    "url": "https://agentsofchaos.baulab.info/report.html",
+    "score": 93,
+    "by": "luu",
+    "source": "hacker_news"
+  },
+  {
+    "title": "Unit: A self-replicating Forth mesh agent running in a browser tab",
+    "url": "https://davidcanhelp.github.io/unit/",
+    "score": 23,
+    "by": "DavidCanHelp",
+    "source": "hacker_news"
+  }
+],
+    "youtube": [],
+    "github_trending": [
+  {
+    "name": "Significant-Gravitas/AutoGPT",
+    "description": "AutoGPT is the vision of accessible AI for everyone, to use and to build on. Our mission is to provide the tools, so that you can focus on what matters.",
+    "stars": 182966,
+    "url": "https://github.com/Significant-Gravitas/AutoGPT",
+    "source": "github_trending"
+  },
+  {
+    "name": "f/prompts.chat",
+    "description": "f.k.a. Awesome ChatGPT Prompts. Share, discover, and collect prompts from the community. Free and open source — self-host for your organization with complete privacy.",
+    "stars": 155071,
+    "url": "https://github.com/f/prompts.chat",
+    "source": "github_trending"
+  },
+  {
+    "name": "rasbt/LLMs-from-scratch",
+    "description": "Implement a ChatGPT-like LLM in PyTorch from scratch, step by step",
+    "stars": 89582,
+    "url": "https://github.com/rasbt/LLMs-from-scratch",
+    "source": "github_trending"
+  },
+  {
+    "name": "hacksider/Deep-Live-Cam",
+    "description": "real time face swap and one-click video deepfake with only a single image",
+    "stars": 86576,
+    "url": "https://github.com/hacksider/Deep-Live-Cam",
+    "source": "github_trending"
+  },
+  {
+    "name": "OpenHands/OpenHands",
+    "description": "🙌 OpenHands: AI-Driven Development",
+    "stars": 70252,
+    "url": "https://github.com/OpenHands/OpenHands",
+    "source": "github_trending"
+  },
+  {
+    "name": "FlowiseAI/Flowise",
+    "description": "Build AI Agents, Visually",
+    "stars": 51270,
+    "url": "https://github.com/FlowiseAI/Flowise",
+    "source": "github_trending"
+  },
+  {
+    "name": "jingyaogong/minimind",
+    "description": "🚀🚀 「大模型」2小时完全从0训练64M的小参数GPT！🌏 Train a 64M-parameter GPT from scratch in just 2h!",
+    "stars": 44886,
+    "url": "https://github.com/jingyaogong/minimind",
+    "source": "github_trending"
+  },
+  {
+    "name": "thedotmack/claude-mem",
+    "description": "A Claude Code plugin that automatically captures everything Claude does during your coding sessions, compresses it with AI (using Claude's agent-sdk), and injects relevant context back into future sessions.",
+    "stars": 43722,
+    "url": "https://github.com/thedotmack/claude-mem",
+    "source": "github_trending"
+  },
+  {
+    "name": "Kong/kong",
+    "description": "🦍 The API and AI Gateway",
+    "stars": 43075,
+    "url": "https://github.com/Kong/kong",
+    "source": "github_trending"
+  },
+  {
+    "name": "ItzCrazyKns/Vane",
+    "description": "Vane is an AI-powered answering engine.",
+    "stars": 33502,
+    "url": "https://github.com/ItzCrazyKns/Vane",
+    "source": "github_trending"
+  }
+]
+  },
+  "counts": {
+    "hacker_news": 10,
+    "youtube": 0,
+    "github_trending": 10
+  },
+  "synthesis": {
+    "key_themes": ,
+    "blog_angle": "",
+    "top_story": ""
+  }
 }
