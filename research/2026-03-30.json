@@ -1,0 +1,17 @@
+{
+  "date": "2026-03-30",
+  "timestamp": "2026-03-30T22:23:09.950912",
+  "sources": {
+    "hacker_news": {},
+    "youtube": {
+      "note": "YouTube API requires authentication - manual aggregation recommended"
+    },
+    "product_hunt": {
+      "note": "Product Hunt requires API key - manual tracking recommended"
+    }
+  },
+  "metadata": {
+    "total_articles": 0,
+    "research_dir": "/Users/openclaw/.openclaw/workspace/ai-research-blog/research"
+  }
+}
