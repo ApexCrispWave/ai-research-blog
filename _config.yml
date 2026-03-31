@@ -10,8 +10,8 @@ description: >
 baseurl: "/ai-research-blog"
 url: "https://ApexCrispWave.github.io"
 
-# Theme
-remote_theme: jekyll/minima
+# Theme (disabled — using custom index.html)
+# remote_theme: jekyll/minima
 
 # Plugins
 plugins:
