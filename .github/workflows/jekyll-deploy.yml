@@ -27,10 +27,11 @@ jobs:
         run: |
           mkdir -p _site
           cp index.html _site/
+          touch _site/.nojekyll
           cp -r _posts _site/ 2>/dev/null || true
           cp feed.xml _site/ 2>/dev/null || true
           cp -r docs _site/docs 2>/dev/null || true
-          echo "Building site to _site/"
+          echo "Site contents:"
           ls -la _site/
 
       - name: Upload artifact
