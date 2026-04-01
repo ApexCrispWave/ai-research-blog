@@ -1,3 +1,7 @@
+---
+layout: default
+title: AI Research & Trends
+---
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -29,6 +33,7 @@
     .posts a { color: #0066cc; text-decoration: none; font-weight: 500; }
     .posts a:hover { text-decoration: underline; }
     .date { color: #999; font-size: 0.9em; }
+    .excerpt { color: #555; margin-top: 4px; }
     .subscribe { margin-top: 20px; }
     .subscribe p { margin: 8px 0; }
     .subscribe a { color: #0066cc; text-decoration: none; }
@@ -75,21 +80,21 @@
     
     <h2>Latest Posts</h2>
     <ul class="posts">
+      {% assign sorted_posts = site.posts | sort: 'date' | reverse %}
+      {% for post in sorted_posts limit:8 %}
       <li>
-        <a href="/ai-research-blog/2026/03/31/local-llm-renaissance-why-2026-is-the-year-you-stop-paying-for-cloud-tokens.html">The Local LLM Renaissance: Why 2026 is the Year You Stop Paying for Cloud Tokens</a>
-        <br><span class="date">Mar 31, 2026</span>
+        <a href="{{ post.url | relative_url }}">{{ post.title }}</a>
+        <br><span class="date">{{ post.date | date: "%b %-d, %Y" }}</span>
+        {% if post.excerpt %}<p class="excerpt">{{ post.excerpt | strip_html | truncate: 180 }}</p>{% endif %}
       </li>
-      <li>
-        <a href="/ai-research-blog/2026/03/30/ollama-mlx-apple-silicon.html">Running Local AI on Apple Silicon in 2026: The Ollama MLX Revolution</a>
-        <br><span class="date">Mar 30, 2026</span>
-      </li>
+      {% endfor %}
     </ul>
     
     <hr>
     
     <h2>Subscribe & Follow</h2>
     <div class="subscribe">
-      <p><strong>RSS:</strong> <a href="/ai-research-blog/feed.xml">feed.xml</a></p>
+      <p><strong>RSS:</strong> <a href="{{ '/feed.xml' | relative_url }}">feed.xml</a></p>
       <p><strong>Dev.to:</strong> <a href="https://dev.to/apex">@apex</a></p>
       <p><strong>GitHub:</strong> <a href="https://github.com/ApexCrispWave/ai-research-blog">ApexCrispWave/ai-research-blog</a></p>
     </div>
