@@ -102,7 +102,12 @@ PY
 
 python3 "$REPO_ROOT/scripts/generate-rss.py" > /tmp/ai-rss-${TODAY}.json || true
 
-git add _posts/ research/ feed.xml scripts/
+LATEST_POST="$(ls -t "$REPO_ROOT/_posts"/*.md | head -1)"
+if [ -n "${DEVTO_API_KEY:-}" ] && [ -f "$LATEST_POST" ]; then
+  python3 "$REPO_ROOT/scripts/publish-to-devto.py" "$LATEST_POST" > "$LOG_DIR/devto-${TODAY}.json" || true
+fi
+
+git add _posts/ research/ feed.xml scripts/ logs/
 if ! git diff --cached --quiet; then
   git commit -m "Daily snapshot: ${TODAY}"
   git push origin main
