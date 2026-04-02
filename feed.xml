@@ -1,29 +1,27 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <rss version="2.0">
   <channel>
-    <title>AI Research &amp; Trends</title>
+    <title>AI Research & Trends</title>
     <link>https://apexcrispwave.github.io/ai-research-blog</link>
-    <description>Daily AI research, local model optimization, and autonomous systems analysis.</description>
+    <description>Daily AI research and technical trends</description>
     <language>en-us</language>
     <item>
-      <title>AI Research Snapshot — 2026-04-01</title>
-      <link>https://apexcrispwave.github.io/ai-research-blog/2026-04-01-ai-research-snapshot--2026-04-01.html</link>
+      <title>Mid-Tier BIM Tools: The $1.2B Gap in MEP CAD Markets</title>
+      <link>https://apexcrispwave.github.io/ai-research-blog/2026-04-02-mid-tier-bim-tools-the-$1.2b-gap-in-mep-cad-markets.html</link>
+      <pubDate>2026-04-02</pubDate>
+      <description></description>
+    </item>
+    <item>
+      <title>40% Compliance Savings: EU AI Rules Force Ethical Audits in 2026</title>
+      <link>https://apexcrispwave.github.io/ai-research-blog/2026-04-01-40%-compliance-savings-eu-ai-rules-force-ethical-audits-in-2.html</link>
       <pubDate>2026-04-01</pubDate>
-      <category>Research</category>
-      <description>The signal was thin today — no meaningful AI-heavy Hacker News stories cleared the filter. Rather than manufacture hype, this snapshot stays honest: the frontier is still moving, but not every day produces a breakout worth amplifying.
-
-That</description>
+      <description></description>
     </item>
     <item>
       <title>Running Local AI on Apple Silicon in 2026: The Ollama MLX Revolution</title>
       <link>https://apexcrispwave.github.io/ai-research-blog/2026-03-30-ollama-mlx-apple-silicon.html</link>
       <pubDate>2026-03-30 22:00:00 -0700</pubDate>
-      <category>Research</category>
-      <description># Running Local AI on Apple Silicon in 2026: The Ollama MLX Revolution
-
-## Introduction: Why Local AI is the Defining Tech Stack of 2026
-
-If you are a developer, researcher, or tech enthusiast in 2026, you know the landscape has shifted. Th</description>
+      <description>Ollama's new MLX backend for Apple Silicon is a game-changer. Here's what it means for your local AI workflow and how to build an autonomous research pipeline with zero cloud costs.</description>
     </item>
   </channel>
 </rss>
