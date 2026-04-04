@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # Research aggregation logs
 logs/
 *.log
@@ -36,3 +37,10 @@ node_modules/
 
 # GitHub Pages build
 _site/
+=======
+logs/
+research/
+scripts/
+.DS_Store
+*.tmp
+>>>>>>> 9c08ebffe657e968761bf053ecd02d4811b1e09b

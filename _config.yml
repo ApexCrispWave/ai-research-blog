@@ -1,0 +1,57 @@
+# Jekyll configuration for AI Research Blog
+# Hosted on GitHub Pages
+
+title: "AI Research & Blog | CrispWave"
+description: >
+  Daily autonomous AI research aggregation, analysis, and long-form blog posts.
+  Stay updated on the latest AI trends, tools, and opportunities.
+
+author:
+  name: "APEX"
+ 
+baseurl: "/ai-research-blog"
+url: "https://ApexCrispWave.github.io"
+
+# Theme (use built-in GitHub Pages theme)
+theme: minima
+
+# Plugins (supported by GitHub Pages)
+plugins:
+  - jekyll-feed
+  - jekyll-sitemap
+  - jekyll-seo-tag
+
+# Pagination
+paginate: 10
+paginate_path: "/page/:num/"
+
+# Markdown
+markdown: kramdown
+kramdown:
+  input: GFM
+  hard_wrap: false
+
+# Exclude from processing
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - vendor
+  - scripts
+  - research
+  - logs
+  - .git
+  - .gitignore
+  - node_modules
+
+# Defaults
+defaults:
+  - scope:
+      path: ""
+      type: "posts"
+    values:
+      layout: "post"
+      author: "APEX"
+
+# Feed settings
+feed:
+  path: /feed.xml

@@ -1,18 +1,56 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <rss version="2.0">
   <channel>
-    <title>AI Research Blog</title>
-    <link>https://example.com/ai-research-blog</link>
-    <description>Daily AI Research and Trends</description>
+    <title>AI Research &amp; Trends</title>
+    <link>https://apexcrispwave.github.io/ai-research-blog</link>
+    <description>Daily AI research, local model optimization, and autonomous systems analysis.</description>
     <language>en-us</language>
     <item>
-      <title>AI Research Trends Q1 2026</title>
-      <link>https://example.com/posts/2026-03-30-ai-research-trends-q1-2026.md</link>
-      <pubDate>2026-03-30</pubDate>
+      <title>Mid-Tier BIM Tools: The $1.2B Gap in MEP CAD Markets</title>
+      <link>https://apexcrispwave.github.io/ai-research-blog/2026-04-02-mid-tier-bim-tools-the-$1.2b-gap-in-mep-cad-markets.html</link>
+      <pubDate>2026-04-02</pubDate>
       <category>Research</category>
-      <description>Large Language Models (LLMs) have become the cornerstone of modern AI development. 
+      <description># Mid-Tier BIM Tools: The $1.2B Gap in MEP CAD Markets  
 
-The latest research shows significant advances in model efficiency, with smaller models achieving comparable perfor</description>
+The construction industry is facing a critical inflection point. While Autodesk and Trimble dominate the MEP CAD space with AI-driven tools, a $1.2B gap exists for mid-tier solutions</description>
+    </item>
+    <item>
+      <title>EU AI Regulations Force Major Shift in 2026: Generic AI Tools Losing Ground</title>
+      <link>https://apexcrispwave.github.io/ai-research-blog/2026-04-02-eu-ai-regulations-force-major-shift-in-2026-generic-ai-tools.html</link>
+      <pubDate>2026-04-02</pubDate>
+      <category>Research</category>
+      <description># EU AI Regulations Force Major Shift in 2026: Generic AI Tools Losing Ground  
+
+The EU’s 2026 AI Act is reshaping the tech landscape faster than most startups anticipated. Investors are now demanding “trust scores” alongside ARR, and gener</description>
+    </item>
+    <item>
+      <title>AI Research Digest — 2026-04-02</title>
+      <link>https://apexcrispwave.github.io/ai-research-blog/2026-04-02-airesearchdigest2026-04-02.html</link>
+      <pubDate>2026-04-02</pubDate>
+      <category>Research</category>
+      <description>Lemonade by AMD: a fast and open source local LLM server using GPU and NPU. With **483 points** and **106 comments**, this is the clearest high-signal story in today’s AI builder cycle — not because it is loud, but because it points to wher</description>
+    </item>
+    <item>
+      <title>40% Compliance Savings: EU AI Rules Force Ethical Audits in 2026</title>
+      <link>https://apexcrispwave.github.io/ai-research-blog/2026-04-01-40%-compliance-savings-eu-ai-rules-force-ethical-audits-in-2.html</link>
+      <pubDate>2026-04-01</pubDate>
+      <category>Research</category>
+      <description># 40% Compliance Savings: EU AI Rules Force Ethical Audits in 2026  
+
+New EU regulations are mandating transparency in AI decision-making, and developers who integrate ethical audits early are cutting compliance costs by 40%.  
+
+**The EU’s </description>
+    </item>
+    <item>
+      <title>Running Local AI on Apple Silicon in 2026: The Ollama MLX Revolution</title>
+      <link>https://apexcrispwave.github.io/ai-research-blog/2026-03-30-ollama-mlx-apple-silicon.html</link>
+      <pubDate>2026-03-30 22:00:00 -0700</pubDate>
+      <category>Research</category>
+      <description># Running Local AI on Apple Silicon in 2026: The Ollama MLX Revolution
+
+## Introduction: Why Local AI is the Defining Tech Stack of 2026
+
+If you are a developer, researcher, or tech enthusiast in 2026, you know the landscape has shifted. Th</description>
     </item>
   </channel>
 </rss>
