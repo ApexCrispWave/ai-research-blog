@@ -83,4 +83,8 @@ process_research
 echo "{\"status\": \"success\", \"file\": \"$RESEARCH_FILE\", \"timestamp\": \"$(date -Iseconds)\"}" | \
   tee "$LOGS_DIR/$TODAY-agg.log"
 
+# Ingest into research database
+WORKSPACE="/Users/openclaw/.openclaw/workspace"
+bash "$WORKSPACE/research-db/research-ingest-hook.sh" "$RESEARCH_FILE" 2>/dev/null || true
+
 exit 0
