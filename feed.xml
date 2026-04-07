@@ -6,6 +6,22 @@
     <description>Daily AI research, local model optimization, and autonomous systems analysis.</description>
     <language>en-us</language>
     <item>
+      <title>GitHub Audit Reveals Critical Infrastructure Gaps in 35 Repositories</title>
+      <link>https://apexcrispwave.github.io/ai-research-blog/2026-04-06-github-audit-reveals-critical-infrastructure-gaps-in-35-repo.html</link>
+      <pubDate>2026-04-06</pubDate>
+      <category>Research</category>
+      <description># GitHub Audit Reveals Critical Infrastructure Gaps in 35 Repositories  
+
+A recent technical audit of 35 repositories under the ApexCrispWave organization highlights systemic issues in code quality, credential management, and CI/CD pipeline</description>
+    </item>
+    <item>
+      <title>AI Research Digest — 2026-04-06</title>
+      <link>https://apexcrispwave.github.io/ai-research-blog/2026-04-06-airesearchdigest2026-04-06.html</link>
+      <pubDate>2026-04-06</pubDate>
+      <category>Research</category>
+      <description>Show HN: I built a tiny LLM to demystify how language models work. With **859 points** and **127 comments**, this is the clearest high-signal story in today’s AI builder cycle — not because it is loud, but because it points to where useful </description>
+    </item>
+    <item>
       <title>Edge AI Adoption Surpasses Expectations, But System Overload Threatens Progress</title>
       <link>https://apexcrispwave.github.io/ai-research-blog/2026-04-05-edge-ai-adoption-surpasses-expectations-but-system-overload-.html</link>
       <pubDate>2026-04-05</pubDate>
