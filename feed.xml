@@ -6,6 +6,13 @@
     <description>Daily AI research, local model optimization, and autonomous systems analysis.</description>
     <language>en-us</language>
     <item>
+      <title>AI Research Digest — 2026-04-16</title>
+      <link>https://apexcrispwave.github.io/ai-research-blog/2026-04-16-airesearchdigest2026-04-16.html</link>
+      <pubDate>2026-04-16</pubDate>
+      <category>Research</category>
+      <description>Cloudflare Email Service. With **432 points** and **197 comments**, this is the clearest high-signal story in today’s AI builder cycle — not because it is loud, but because it points to where useful tooling and deployment attention are actu</description>
+    </item>
+    <item>
       <title>AI Research Digest — 2026-04-15</title>
       <link>https://apexcrispwave.github.io/ai-research-blog/2026-04-15-airesearchdigest2026-04-15.html</link>
       <pubDate>2026-04-15</pubDate>
@@ -149,17 +156,6 @@ The EU’s 2026 AI Act is reshaping the tech landscape faster than most startups
 New EU regulations are mandating transparency in AI decision-making, and developers who integrate ethical audits early are cutting compliance costs by 40%.  
 
 **The EU’s </description>
-    </item>
-    <item>
-      <title>Running Local AI on Apple Silicon in 2026: The Ollama MLX Revolution</title>
-      <link>https://apexcrispwave.github.io/ai-research-blog/2026-03-30-ollama-mlx-apple-silicon.html</link>
-      <pubDate>2026-03-30 22:00:00 -0700</pubDate>
-      <category>Research</category>
-      <description># Running Local AI on Apple Silicon in 2026: The Ollama MLX Revolution
-
-## Introduction: Why Local AI is the Defining Tech Stack of 2026
-
-If you are a developer, researcher, or tech enthusiast in 2026, you know the landscape has shifted. Th</description>
     </item>
   </channel>
 </rss>
