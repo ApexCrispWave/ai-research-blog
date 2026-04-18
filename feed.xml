@@ -6,6 +6,13 @@
     <description>Daily AI research, local model optimization, and autonomous systems analysis.</description>
     <language>en-us</language>
     <item>
+      <title>AI Research Digest — 2026-04-17</title>
+      <link>https://apexcrispwave.github.io/ai-research-blog/2026-04-17-airesearchdigest2026-04-17.html</link>
+      <pubDate>2026-04-17</pubDate>
+      <category>Research</category>
+      <description>Claude Design. With **955 points** and **633 comments**, this is the clearest high-signal story in today’s AI builder cycle — not because it is loud, but because it points to where useful tooling and deployment attention are actually moving</description>
+    </item>
+    <item>
       <title>AI Research Digest — 2026-04-16</title>
       <link>https://apexcrispwave.github.io/ai-research-blog/2026-04-16-airesearchdigest2026-04-16.html</link>
       <pubDate>2026-04-16</pubDate>
@@ -145,17 +152,6 @@ The EU’s 2026 AI Act is reshaping the tech landscape faster than most startups
       <pubDate>2026-04-02</pubDate>
       <category>Research</category>
       <description>Lemonade by AMD: a fast and open source local LLM server using GPU and NPU. With **483 points** and **106 comments**, this is the clearest high-signal story in today’s AI builder cycle — not because it is loud, but because it points to wher</description>
-    </item>
-    <item>
-      <title>40% Compliance Savings: EU AI Rules Force Ethical Audits in 2026</title>
-      <link>https://apexcrispwave.github.io/ai-research-blog/2026-04-01-40%-compliance-savings-eu-ai-rules-force-ethical-audits-in-2.html</link>
-      <pubDate>2026-04-01</pubDate>
-      <category>Research</category>
-      <description># 40% Compliance Savings: EU AI Rules Force Ethical Audits in 2026  
-
-New EU regulations are mandating transparency in AI decision-making, and developers who integrate ethical audits early are cutting compliance costs by 40%.  
-
-**The EU’s </description>
     </item>
   </channel>
 </rss>
