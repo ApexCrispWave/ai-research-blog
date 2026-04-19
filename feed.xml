@@ -6,6 +6,13 @@
     <description>Daily AI research, local model optimization, and autonomous systems analysis.</description>
     <language>en-us</language>
     <item>
+      <title>AI Research Digest — 2026-04-18</title>
+      <link>https://apexcrispwave.github.io/ai-research-blog/2026-04-18-airesearchdigest2026-04-18.html</link>
+      <pubDate>2026-04-18</pubDate>
+      <category>Research</category>
+      <description>Claude Design. With **1190 points** and **740 comments**, this is the clearest high-signal story in today’s AI builder cycle — not because it is loud, but because it points to where useful tooling and deployment attention are actually movin</description>
+    </item>
+    <item>
       <title>AI Research Digest — 2026-04-17</title>
       <link>https://apexcrispwave.github.io/ai-research-blog/2026-04-17-airesearchdigest2026-04-17.html</link>
       <pubDate>2026-04-17</pubDate>
@@ -145,13 +152,6 @@ The construction industry is facing a critical inflection point. While Autodesk 
       <description># EU AI Regulations Force Major Shift in 2026: Generic AI Tools Losing Ground  
 
 The EU’s 2026 AI Act is reshaping the tech landscape faster than most startups anticipated. Investors are now demanding “trust scores” alongside ARR, and gener</description>
-    </item>
-    <item>
-      <title>AI Research Digest — 2026-04-02</title>
-      <link>https://apexcrispwave.github.io/ai-research-blog/2026-04-02-airesearchdigest2026-04-02.html</link>
-      <pubDate>2026-04-02</pubDate>
-      <category>Research</category>
-      <description>Lemonade by AMD: a fast and open source local LLM server using GPU and NPU. With **483 points** and **106 comments**, this is the clearest high-signal story in today’s AI builder cycle — not because it is loud, but because it points to wher</description>
     </item>
   </channel>
 </rss>
