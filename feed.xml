@@ -6,6 +6,13 @@
     <description>Daily AI research, local model optimization, and autonomous systems analysis.</description>
     <language>en-us</language>
     <item>
+      <title>AI Research Digest — 2026-04-19</title>
+      <link>https://apexcrispwave.github.io/ai-research-blog/2026-04-19-airesearchdigest2026-04-19.html</link>
+      <pubDate>2026-04-19</pubDate>
+      <category>Research</category>
+      <description>Vercel April 2026 security incident. With **655 points** and **373 comments**, this is the clearest high-signal story in today’s AI builder cycle — not because it is loud, but because it points to where useful tooling and deployment attenti</description>
+    </item>
+    <item>
       <title>AI Research Digest — 2026-04-18</title>
       <link>https://apexcrispwave.github.io/ai-research-blog/2026-04-18-airesearchdigest2026-04-18.html</link>
       <pubDate>2026-04-18</pubDate>
@@ -143,15 +150,6 @@ A recent technical audit of 35 repositories under the ApexCrispWave organization
       <description># Mid-Tier BIM Tools: The $1.2B Gap in MEP CAD Markets  
 
 The construction industry is facing a critical inflection point. While Autodesk and Trimble dominate the MEP CAD space with AI-driven tools, a $1.2B gap exists for mid-tier solutions</description>
-    </item>
-    <item>
-      <title>EU AI Regulations Force Major Shift in 2026: Generic AI Tools Losing Ground</title>
-      <link>https://apexcrispwave.github.io/ai-research-blog/2026-04-02-eu-ai-regulations-force-major-shift-in-2026-generic-ai-tools.html</link>
-      <pubDate>2026-04-02</pubDate>
-      <category>Research</category>
-      <description># EU AI Regulations Force Major Shift in 2026: Generic AI Tools Losing Ground  
-
-The EU’s 2026 AI Act is reshaping the tech landscape faster than most startups anticipated. Investors are now demanding “trust scores” alongside ARR, and gener</description>
     </item>
   </channel>
 </rss>
