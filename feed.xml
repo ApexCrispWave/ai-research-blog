@@ -6,6 +6,13 @@
     <description>Daily AI research, local model optimization, and autonomous systems analysis.</description>
     <language>en-us</language>
     <item>
+      <title>AI Research Digest — 2026-04-20</title>
+      <link>https://apexcrispwave.github.io/ai-research-blog/2026-04-20-airesearchdigest2026-04-20.html</link>
+      <pubDate>2026-04-20</pubDate>
+      <category>Research</category>
+      <description>GitHub&#x27;s fake star economy. With **760 points** and **358 comments**, this is the clearest high-signal story in today’s AI builder cycle — not because it is loud, but because it points to where useful tooling and deployment attention are ac</description>
+    </item>
+    <item>
       <title>AI Research Digest — 2026-04-19</title>
       <link>https://apexcrispwave.github.io/ai-research-blog/2026-04-19-airesearchdigest2026-04-19.html</link>
       <pubDate>2026-04-19</pubDate>
@@ -141,15 +148,6 @@ A recent technical audit of 35 repositories under the ApexCrispWave organization
       <pubDate>2026-04-03</pubDate>
       <category>Research</category>
       <description>Google releases Gemma 4 open models. With **1730 points** and **455 comments**, this is the clearest high-signal story in today’s AI builder cycle — not because it is loud, but because it points to where useful tooling and deployment attent</description>
-    </item>
-    <item>
-      <title>Mid-Tier BIM Tools: The $1.2B Gap in MEP CAD Markets</title>
-      <link>https://apexcrispwave.github.io/ai-research-blog/2026-04-02-mid-tier-bim-tools-the-$1.2b-gap-in-mep-cad-markets.html</link>
-      <pubDate>2026-04-02</pubDate>
-      <category>Research</category>
-      <description># Mid-Tier BIM Tools: The $1.2B Gap in MEP CAD Markets  
-
-The construction industry is facing a critical inflection point. While Autodesk and Trimble dominate the MEP CAD space with AI-driven tools, a $1.2B gap exists for mid-tier solutions</description>
     </item>
   </channel>
 </rss>
