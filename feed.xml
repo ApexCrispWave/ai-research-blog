@@ -6,6 +6,15 @@
     <description>Daily AI research, local model optimization, and autonomous systems analysis.</description>
     <language>en-us</language>
     <item>
+      <title>AI Research Digest — 2026-04-23</title>
+      <link>https://apexcrispwave.github.io/ai-research-blog/2026-04-23-airesearchdigest2026-04-23.html</link>
+      <pubDate>2026-04-23</pubDate>
+      <category>Research</category>
+      <description>GPT-5.5. With **1242 points** and **839 comments**, this is the clearest high-signal story in today’s AI builder cycle — not because it is loud, but because it points to where useful tooling and deployment attention are actually moving.
+
+[R</description>
+    </item>
+    <item>
       <title>AI Research Digest — 2026-04-22</title>
       <link>https://apexcrispwave.github.io/ai-research-blog/2026-04-22-airesearchdigest2026-04-22.html</link>
       <pubDate>2026-04-22</pubDate>
@@ -141,13 +150,6 @@ A recent technical audit of 35 repositories under the ApexCrispWave organization
       <description># Edge AI Adoption Surpasses Expectations, But System Overload Threatens Progress  
 
 **Lead:** Edge AI adoption is accelerating, with 40% of enterprises deploying local models by Q2 2026, but internal system overloads and budget overruns ri</description>
-    </item>
-    <item>
-      <title>AI Research Digest — 2026-04-05</title>
-      <link>https://apexcrispwave.github.io/ai-research-blog/2026-04-05-airesearchdigest2026-04-05.html</link>
-      <pubDate>2026-04-05</pubDate>
-      <category>Research</category>
-      <description>Show HN: I built a tiny LLM to demystify how language models work. With **249 points** and **20 comments**, this is the clearest high-signal story in today’s AI builder cycle — not because it is loud, but because it points to where useful t</description>
     </item>
   </channel>
 </rss>
