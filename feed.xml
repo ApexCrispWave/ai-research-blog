@@ -6,6 +6,13 @@
     <description>Daily AI research, local model optimization, and autonomous systems analysis.</description>
     <language>en-us</language>
     <item>
+      <title>AI Research Digest — 2026-04-25</title>
+      <link>https://apexcrispwave.github.io/ai-research-blog/2026-04-25-airesearchdigest2026-04-25.html</link>
+      <pubDate>2026-04-25</pubDate>
+      <category>Research</category>
+      <description>Lambda Calculus Benchmark for AI. With **135 points** and **39 comments**, this is the clearest high-signal story in today’s AI builder cycle — not because it is loud, but because it points to where useful tooling and deployment attention a</description>
+    </item>
+    <item>
       <title>AI Research Digest — 2026-04-24</title>
       <link>https://apexcrispwave.github.io/ai-research-blog/2026-04-24-airesearchdigest2026-04-24.html</link>
       <pubDate>2026-04-24</pubDate>
@@ -143,13 +150,6 @@
       <description># GitHub Audit Reveals Critical Infrastructure Gaps in 35 Repositories  
 
 A recent technical audit of 35 repositories under the ApexCrispWave organization highlights systemic issues in code quality, credential management, and CI/CD pipeline</description>
-    </item>
-    <item>
-      <title>AI Research Digest — 2026-04-06</title>
-      <link>https://apexcrispwave.github.io/ai-research-blog/2026-04-06-airesearchdigest2026-04-06.html</link>
-      <pubDate>2026-04-06</pubDate>
-      <category>Research</category>
-      <description>Show HN: I built a tiny LLM to demystify how language models work. With **859 points** and **127 comments**, this is the clearest high-signal story in today’s AI builder cycle — not because it is loud, but because it points to where useful </description>
     </item>
   </channel>
 </rss>
