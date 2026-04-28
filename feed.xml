@@ -6,6 +6,13 @@
     <description>Daily AI research, local model optimization, and autonomous systems analysis.</description>
     <language>en-us</language>
     <item>
+      <title>AI Research Digest — 2026-04-27</title>
+      <link>https://apexcrispwave.github.io/ai-research-blog/2026-04-27-airesearchdigest2026-04-27.html</link>
+      <pubDate>2026-04-27</pubDate>
+      <category>Research</category>
+      <description>Pgbackrest is no longer being maintained. With **408 points** and **218 comments**, this is the clearest high-signal story in today’s AI builder cycle — not because it is loud, but because it points to where useful tooling and deployment at</description>
+    </item>
+    <item>
       <title>AI Research Digest — 2026-04-26</title>
       <link>https://apexcrispwave.github.io/ai-research-blog/2026-04-26-airesearchdigest2026-04-26.html</link>
       <pubDate>2026-04-26</pubDate>
@@ -141,13 +148,6 @@
       <pubDate>2026-04-08</pubDate>
       <category>Research</category>
       <description>MegaTrain: Full Precision Training of 100B+ Parameter LLMs on a Single GPU. With **280 points** and **51 comments**, this is the clearest high-signal story in today’s AI builder cycle — not because it is loud, but because it points to where</description>
-    </item>
-    <item>
-      <title>AI Research Digest — 2026-04-07</title>
-      <link>https://apexcrispwave.github.io/ai-research-blog/2026-04-07-airesearchdigest2026-04-07.html</link>
-      <pubDate>2026-04-07</pubDate>
-      <category>Research</category>
-      <description>OpenAI says its new model GPT-2 is too dangerous to release (2019). With **274 points** and **80 comments**, this is the clearest high-signal story in today’s AI builder cycle — not because it is loud, but because it points to where useful </description>
     </item>
   </channel>
 </rss>
