@@ -6,6 +6,13 @@
     <description>Daily AI research, local model optimization, and autonomous systems analysis.</description>
     <language>en-us</language>
     <item>
+      <title>AI Research Digest — 2026-04-30</title>
+      <link>https://apexcrispwave.github.io/ai-research-blog/2026-04-30-airesearchdigest2026-04-30.html</link>
+      <pubDate>2026-04-30</pubDate>
+      <category>Research</category>
+      <description>Mozilla&#x27;s opposition to Chrome&#x27;s Prompt API. With **607 points** and **221 comments**, this is the clearest high-signal story in today’s AI builder cycle — not because it is loud, but because it points to where useful tooling and deployment</description>
+    </item>
+    <item>
       <title>AI Research Digest — 2026-04-29</title>
       <link>https://apexcrispwave.github.io/ai-research-blog/2026-04-29-airesearchdigest2026-04-29.html</link>
       <pubDate>2026-04-29</pubDate>
@@ -141,13 +148,6 @@
       <pubDate>2026-04-11</pubDate>
       <category>Research</category>
       <description>AI assistance when contributing to the Linux kernel. With **499 points** and **381 comments**, this is the clearest high-signal story in today’s AI builder cycle — not because it is loud, but because it points to where useful tooling and de</description>
-    </item>
-    <item>
-      <title>AI Research Digest — 2026-04-10</title>
-      <link>https://apexcrispwave.github.io/ai-research-blog/2026-04-10-airesearchdigest2026-04-10.html</link>
-      <pubDate>2026-04-10</pubDate>
-      <category>Research</category>
-      <description>AI assistance when contributing to the Linux kernel. With **252 points** and **167 comments**, this is the clearest high-signal story in today’s AI builder cycle — not because it is loud, but because it points to where useful tooling and de</description>
     </item>
   </channel>
 </rss>
