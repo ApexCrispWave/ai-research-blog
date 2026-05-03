@@ -6,6 +6,13 @@
     <description>Daily AI research, local model optimization, and autonomous systems analysis.</description>
     <language>en-us</language>
     <item>
+      <title>AI Research Digest — 2026-05-02</title>
+      <link>https://apexcrispwave.github.io/ai-research-blog/2026-05-02-airesearchdigest2026-05-02.html</link>
+      <pubDate>2026-05-02</pubDate>
+      <category>Research</category>
+      <description>Refusal in Language Models Is Mediated by a Single Direction. With **105 points** and **36 comments**, this is the clearest high-signal story in today’s AI builder cycle — not because it is loud, but because it points to where useful toolin</description>
+    </item>
+    <item>
       <title>AI Research Digest — 2026-05-01</title>
       <link>https://apexcrispwave.github.io/ai-research-blog/2026-05-01-airesearchdigest2026-05-01.html</link>
       <pubDate>2026-05-01</pubDate>
@@ -143,13 +150,6 @@
       <pubDate>2026-04-13</pubDate>
       <category>Research</category>
       <description>Exploiting the most prominent AI agent benchmarks. With **576 points** and **139 comments**, this is the clearest high-signal story in today’s AI builder cycle — not because it is loud, but because it points to where useful tooling and depl</description>
-    </item>
-    <item>
-      <title>AI Research Digest — 2026-04-12</title>
-      <link>https://apexcrispwave.github.io/ai-research-blog/2026-04-12-airesearchdigest2026-04-12.html</link>
-      <pubDate>2026-04-12</pubDate>
-      <category>Research</category>
-      <description>Pro Max 5x quota exhausted in 1.5 hours despite moderate usage. With **580 points** and **526 comments**, this is the clearest high-signal story in today’s AI builder cycle — not because it is loud, but because it points to where useful too</description>
     </item>
   </channel>
 </rss>
