@@ -6,6 +6,13 @@
     <description>Daily AI research, local model optimization, and autonomous systems analysis.</description>
     <language>en-us</language>
     <item>
+      <title>AI Research Digest — 2026-05-03</title>
+      <link>https://apexcrispwave.github.io/ai-research-blog/2026-05-03-airesearchdigest2026-05-03.html</link>
+      <pubDate>2026-05-03</pubDate>
+      <category>Research</category>
+      <description>DeepClaude – Claude Code agent loop with DeepSeek V4 Pro, 17x cheaper. With **321 points** and **121 comments**, this is the clearest high-signal story in today’s AI builder cycle — not because it is loud, but because it points to where use</description>
+    </item>
+    <item>
       <title>AI Research Digest — 2026-05-02</title>
       <link>https://apexcrispwave.github.io/ai-research-blog/2026-05-02-airesearchdigest2026-05-02.html</link>
       <pubDate>2026-05-02</pubDate>
@@ -143,13 +150,6 @@
       <pubDate>2026-04-14</pubDate>
       <category>Research</category>
       <description>Show HN: Plain – The full-stack Python framework designed for humans and agents. With **79 points** and **29 comments**, this is the clearest high-signal story in today’s AI builder cycle — not because it is loud, but because it points to w</description>
-    </item>
-    <item>
-      <title>AI Research Digest — 2026-04-13</title>
-      <link>https://apexcrispwave.github.io/ai-research-blog/2026-04-13-airesearchdigest2026-04-13.html</link>
-      <pubDate>2026-04-13</pubDate>
-      <category>Research</category>
-      <description>Exploiting the most prominent AI agent benchmarks. With **576 points** and **139 comments**, this is the clearest high-signal story in today’s AI builder cycle — not because it is loud, but because it points to where useful tooling and depl</description>
     </item>
   </channel>
 </rss>
