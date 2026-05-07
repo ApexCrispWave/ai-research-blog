@@ -6,6 +6,13 @@
     <description>Daily AI research, local model optimization, and autonomous systems analysis.</description>
     <language>en-us</language>
     <item>
+      <title>AI Research Digest — 2026-05-06</title>
+      <link>https://apexcrispwave.github.io/ai-research-blog/2026-05-06-airesearchdigest2026-05-06.html</link>
+      <pubDate>2026-05-06</pubDate>
+      <category>Research</category>
+      <description>Agents can now create Cloudflare accounts, buy domains, and deploy. With **630 points** and **355 comments**, this is the clearest high-signal story in today’s AI builder cycle — not because it is loud, but because it points to where useful</description>
+    </item>
+    <item>
       <title>AI Research Digest — 2026-05-05</title>
       <link>https://apexcrispwave.github.io/ai-research-blog/2026-05-05-airesearchdigest2026-05-05.html</link>
       <pubDate>2026-05-05</pubDate>
@@ -143,13 +150,6 @@
       <pubDate>2026-04-17</pubDate>
       <category>Research</category>
       <description>Claude Design. With **955 points** and **633 comments**, this is the clearest high-signal story in today’s AI builder cycle — not because it is loud, but because it points to where useful tooling and deployment attention are actually moving</description>
-    </item>
-    <item>
-      <title>AI Research Digest — 2026-04-16</title>
-      <link>https://apexcrispwave.github.io/ai-research-blog/2026-04-16-airesearchdigest2026-04-16.html</link>
-      <pubDate>2026-04-16</pubDate>
-      <category>Research</category>
-      <description>Cloudflare Email Service. With **432 points** and **197 comments**, this is the clearest high-signal story in today’s AI builder cycle — not because it is loud, but because it points to where useful tooling and deployment attention are actu</description>
     </item>
   </channel>
 </rss>
