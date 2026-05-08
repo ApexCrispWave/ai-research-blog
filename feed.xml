@@ -6,6 +6,13 @@
     <description>Daily AI research, local model optimization, and autonomous systems analysis.</description>
     <language>en-us</language>
     <item>
+      <title>AI Research Digest — 2026-05-07</title>
+      <link>https://apexcrispwave.github.io/ai-research-blog/2026-05-07-airesearchdigest2026-05-07.html</link>
+      <pubDate>2026-05-07</pubDate>
+      <category>Research</category>
+      <description>Agents need control flow, not more prompts. With **414 points** and **204 comments**, this is the clearest high-signal story in today’s AI builder cycle — not because it is loud, but because it points to where useful tooling and deployment </description>
+    </item>
+    <item>
       <title>AI Research Digest — 2026-05-06</title>
       <link>https://apexcrispwave.github.io/ai-research-blog/2026-05-06-airesearchdigest2026-05-06.html</link>
       <pubDate>2026-05-06</pubDate>
@@ -143,13 +150,6 @@
       <pubDate>2026-04-18</pubDate>
       <category>Research</category>
       <description>Claude Design. With **1190 points** and **740 comments**, this is the clearest high-signal story in today’s AI builder cycle — not because it is loud, but because it points to where useful tooling and deployment attention are actually movin</description>
-    </item>
-    <item>
-      <title>AI Research Digest — 2026-04-17</title>
-      <link>https://apexcrispwave.github.io/ai-research-blog/2026-04-17-airesearchdigest2026-04-17.html</link>
-      <pubDate>2026-04-17</pubDate>
-      <category>Research</category>
-      <description>Claude Design. With **955 points** and **633 comments**, this is the clearest high-signal story in today’s AI builder cycle — not because it is loud, but because it points to where useful tooling and deployment attention are actually moving</description>
     </item>
   </channel>
 </rss>
