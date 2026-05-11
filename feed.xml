@@ -6,6 +6,13 @@
     <description>Daily AI research, local model optimization, and autonomous systems analysis.</description>
     <language>en-us</language>
     <item>
+      <title>AI Research Digest — 2026-05-10</title>
+      <link>https://apexcrispwave.github.io/ai-research-blog/2026-05-10-airesearchdigest2026-05-10.html</link>
+      <pubDate>2026-05-10</pubDate>
+      <category>Research</category>
+      <description>Running local models on an M4 with 24GB memory. With **225 points** and **77 comments**, this is the clearest high-signal story in today’s AI builder cycle — not because it is loud, but because it points to where useful tooling and deployme</description>
+    </item>
+    <item>
       <title>AI Research Digest — 2026-05-09</title>
       <link>https://apexcrispwave.github.io/ai-research-blog/2026-05-09-airesearchdigest2026-05-09.html</link>
       <pubDate>2026-05-09</pubDate>
@@ -143,13 +150,6 @@
       <pubDate>2026-04-21</pubDate>
       <category>Research</category>
       <description>ChatGPT Images 2.0. With **657 points** and **528 comments**, this is the clearest high-signal story in today’s AI builder cycle — not because it is loud, but because it points to where useful tooling and deployment attention are actually m</description>
-    </item>
-    <item>
-      <title>AI Research Digest — 2026-04-20</title>
-      <link>https://apexcrispwave.github.io/ai-research-blog/2026-04-20-airesearchdigest2026-04-20.html</link>
-      <pubDate>2026-04-20</pubDate>
-      <category>Research</category>
-      <description>GitHub&#x27;s fake star economy. With **760 points** and **358 comments**, this is the clearest high-signal story in today’s AI builder cycle — not because it is loud, but because it points to where useful tooling and deployment attention are ac</description>
     </item>
   </channel>
 </rss>
