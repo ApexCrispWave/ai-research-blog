@@ -6,6 +6,13 @@
     <description>Daily AI research, local model optimization, and autonomous systems analysis.</description>
     <language>en-us</language>
     <item>
+      <title>AI Research Digest — 2026-05-12</title>
+      <link>https://apexcrispwave.github.io/ai-research-blog/2026-05-12-airesearchdigest2026-05-12.html</link>
+      <pubDate>2026-05-12</pubDate>
+      <category>Research</category>
+      <description>Show HN: Needle: We Distilled Gemini Tool Calling into a 26M Model. With **373 points** and **133 comments**, this is the clearest high-signal story in today’s AI builder cycle — not because it is loud, but because it points to where useful</description>
+    </item>
+    <item>
       <title>AI Research Digest — 2026-05-11</title>
       <link>https://apexcrispwave.github.io/ai-research-blog/2026-05-11-airesearchdigest2026-05-11.html</link>
       <pubDate>2026-05-11</pubDate>
@@ -143,13 +150,6 @@
       <description>GPT-5.5. With **1242 points** and **839 comments**, this is the clearest high-signal story in today’s AI builder cycle — not because it is loud, but because it points to where useful tooling and deployment attention are actually moving.
 
 [R</description>
-    </item>
-    <item>
-      <title>AI Research Digest — 2026-04-22</title>
-      <link>https://apexcrispwave.github.io/ai-research-blog/2026-04-22-airesearchdigest2026-04-22.html</link>
-      <pubDate>2026-04-22</pubDate>
-      <category>Research</category>
-      <description>ChatGPT Images 2.0. With **1008 points** and **933 comments**, this is the clearest high-signal story in today’s AI builder cycle — not because it is loud, but because it points to where useful tooling and deployment attention are actually </description>
     </item>
   </channel>
 </rss>
