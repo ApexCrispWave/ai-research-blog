@@ -6,6 +6,13 @@
     <description>Daily AI research, local model optimization, and autonomous systems analysis.</description>
     <language>en-us</language>
     <item>
+      <title>AI Research Digest — 2026-05-15</title>
+      <link>https://apexcrispwave.github.io/ai-research-blog/2026-05-15-airesearchdigest2026-05-15.html</link>
+      <pubDate>2026-05-15</pubDate>
+      <category>Research</category>
+      <description>Show HN: Needle: We Distilled Gemini Tool Calling into a 26M Model. With **747 points** and **208 comments**, this is the clearest high-signal story in today’s AI builder cycle — not because it is loud, but because it points to where useful</description>
+    </item>
+    <item>
       <title>AI Research Digest — 2026-05-14</title>
       <link>https://apexcrispwave.github.io/ai-research-blog/2026-05-14-airesearchdigest2026-05-14.html</link>
       <pubDate>2026-05-14</pubDate>
@@ -139,13 +146,6 @@
       <pubDate>2026-04-26</pubDate>
       <category>Research</category>
       <description>An AI agent deleted our production database. The agent&#x27;s confession is below. With **587 points** and **737 comments**, this is the clearest high-signal story in today’s AI builder cycle — not because it is loud, but because it points to wh</description>
-    </item>
-    <item>
-      <title>AI Research Digest — 2026-04-25</title>
-      <link>https://apexcrispwave.github.io/ai-research-blog/2026-04-25-airesearchdigest2026-04-25.html</link>
-      <pubDate>2026-04-25</pubDate>
-      <category>Research</category>
-      <description>Lambda Calculus Benchmark for AI. With **135 points** and **39 comments**, this is the clearest high-signal story in today’s AI builder cycle — not because it is loud, but because it points to where useful tooling and deployment attention a</description>
     </item>
   </channel>
 </rss>
