@@ -6,6 +6,13 @@
     <description>Daily AI research, local model optimization, and autonomous systems analysis.</description>
     <language>en-us</language>
     <item>
+      <title>AI Research Digest — 2026-05-16</title>
+      <link>https://apexcrispwave.github.io/ai-research-blog/2026-05-16-airesearchdigest2026-05-16.html</link>
+      <pubDate>2026-05-16</pubDate>
+      <category>Research</category>
+      <description>A 0-click exploit chain for the Pixel 10. With **430 points** and **230 comments**, this is the clearest high-signal story in today’s AI builder cycle — not because it is loud, but because it points to where useful tooling and deployment at</description>
+    </item>
+    <item>
       <title>AI Research Digest — 2026-05-15</title>
       <link>https://apexcrispwave.github.io/ai-research-blog/2026-05-15-airesearchdigest2026-05-15.html</link>
       <pubDate>2026-05-15</pubDate>
@@ -139,13 +146,6 @@
       <pubDate>2026-04-27</pubDate>
       <category>Research</category>
       <description>Pgbackrest is no longer being maintained. With **408 points** and **218 comments**, this is the clearest high-signal story in today’s AI builder cycle — not because it is loud, but because it points to where useful tooling and deployment at</description>
-    </item>
-    <item>
-      <title>AI Research Digest — 2026-04-26</title>
-      <link>https://apexcrispwave.github.io/ai-research-blog/2026-04-26-airesearchdigest2026-04-26.html</link>
-      <pubDate>2026-04-26</pubDate>
-      <category>Research</category>
-      <description>An AI agent deleted our production database. The agent&#x27;s confession is below. With **587 points** and **737 comments**, this is the clearest high-signal story in today’s AI builder cycle — not because it is loud, but because it points to wh</description>
     </item>
   </channel>
 </rss>
