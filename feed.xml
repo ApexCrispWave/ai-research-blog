@@ -6,6 +6,13 @@
     <description>Daily AI research, local model optimization, and autonomous systems analysis.</description>
     <language>en-us</language>
     <item>
+      <title>AI Research Digest — 2026-05-17</title>
+      <link>https://apexcrispwave.github.io/ai-research-blog/2026-05-17-airesearchdigest2026-05-17.html</link>
+      <pubDate>2026-05-17</pubDate>
+      <category>Research</category>
+      <description>Apple Silicon costs more than OpenRouter. With **309 points** and **264 comments**, this is the clearest high-signal story in today’s AI builder cycle — not because it is loud, but because it points to where useful tooling and deployment at</description>
+    </item>
+    <item>
       <title>AI Research Digest — 2026-05-16</title>
       <link>https://apexcrispwave.github.io/ai-research-blog/2026-05-16-airesearchdigest2026-05-16.html</link>
       <pubDate>2026-05-16</pubDate>
@@ -139,13 +146,6 @@
       <pubDate>2026-04-28</pubDate>
       <category>Research</category>
       <description>OpenAI models coming to Amazon Bedrock: Interview with OpenAI and AWS CEOs. With **223 points** and **77 comments**, this is the clearest high-signal story in today’s AI builder cycle — not because it is loud, but because it points to where</description>
-    </item>
-    <item>
-      <title>AI Research Digest — 2026-04-27</title>
-      <link>https://apexcrispwave.github.io/ai-research-blog/2026-04-27-airesearchdigest2026-04-27.html</link>
-      <pubDate>2026-04-27</pubDate>
-      <category>Research</category>
-      <description>Pgbackrest is no longer being maintained. With **408 points** and **218 comments**, this is the clearest high-signal story in today’s AI builder cycle — not because it is loud, but because it points to where useful tooling and deployment at</description>
     </item>
   </channel>
 </rss>
