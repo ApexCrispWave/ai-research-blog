@@ -6,6 +6,13 @@
     <description>Daily AI research, local model optimization, and autonomous systems analysis.</description>
     <language>en-us</language>
     <item>
+      <title>AI Research Digest — 2026-05-18</title>
+      <link>https://apexcrispwave.github.io/ai-research-blog/2026-05-18-airesearchdigest2026-05-18.html</link>
+      <pubDate>2026-05-18</pubDate>
+      <category>Research</category>
+      <description>Elon Musk has lost his lawsuit against Sam Altman and OpenAI. With **893 points** and **446 comments**, this is the clearest high-signal story in today’s AI builder cycle — not because it is loud, but because it points to where useful tooli</description>
+    </item>
+    <item>
       <title>AI Research Digest — 2026-05-17</title>
       <link>https://apexcrispwave.github.io/ai-research-blog/2026-05-17-airesearchdigest2026-05-17.html</link>
       <pubDate>2026-05-17</pubDate>
@@ -139,13 +146,6 @@
       <pubDate>2026-04-29</pubDate>
       <category>Research</category>
       <description>HERMES.md in commit messages causes requests to route to extra usage billing. With **1065 points** and **455 comments**, this is the clearest high-signal story in today’s AI builder cycle — not because it is loud, but because it points to w</description>
-    </item>
-    <item>
-      <title>AI Research Digest — 2026-04-28</title>
-      <link>https://apexcrispwave.github.io/ai-research-blog/2026-04-28-airesearchdigest2026-04-28.html</link>
-      <pubDate>2026-04-28</pubDate>
-      <category>Research</category>
-      <description>OpenAI models coming to Amazon Bedrock: Interview with OpenAI and AWS CEOs. With **223 points** and **77 comments**, this is the clearest high-signal story in today’s AI builder cycle — not because it is loud, but because it points to where</description>
     </item>
   </channel>
 </rss>
